@@ -8,6 +8,8 @@ import PaymentPage from './components/Paymentpage/Paymentpage';
 import Promotions from './components/Promotionalbanners/Promotionalbanners';
 import Offers from './components/Promotionalbanners/Promotionalbanners';
 import Servicehours from './components/Servicehours';
+import LoginPage from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/ordertracking" element={<OrderTracking />} /> */}
          <Route path="/" element={<Subscriptions />} />
          <Route path="/payment" element={<PaymentPage />} /> ✅ fixed usage
+         <Route path='/login'element={<LoginPage/>} />
+        <Route path='/signup' element={<Signup/>} />
         {/* Catch-all route (optional)
         <Route path="*" element={<div>404 - Page Not Found</div>} /> */}
       </Routes>
