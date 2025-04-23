@@ -1,7 +1,10 @@
+.chinna{
+  background-color:#fbd000;;
+}
 .payment-page {
     max-width: 400px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 10px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -126,12 +129,12 @@
         .currency {
           font-size: 18px;
           font-weight: bold;
-          color: red;  // Red color for ₹ symbol
-          margin-right: 7px; // Space between ₹ and price
+          color: red; 
+          margin-right: 7px; 
         }
   
         .price {
-          color: red;  // Red color for price
+          color: red;  
           font-weight: bold;
           font-size: 28px;
         }
@@ -146,7 +149,30 @@
       color: #155724;
       font-weight: bold;
     }
-  
+    .celebration-emoji {
+      font-size: 6rem;
+      text-align: center;
+      animation: popAndFade 2s ease-in-out;
+      margin: 1rem auto;
+      color: #ff4081;
+    }
+    
+    @keyframes popAndFade {
+      0% {
+        transform: scale(0.2);
+        opacity: 0;
+        margin-top: -2rem;
+      }
+      50% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+    
     /* Media Queries for responsiveness */
     
     @media (max-width: 768px) {

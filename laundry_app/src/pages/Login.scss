@@ -4,19 +4,19 @@
   font-family: sans-serif;
   flex-direction: row;
 }
-
+ 
 .image-section {
   flex: 1;
   position: relative;
   display: block;
 }
-
+ 
 .laundry-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+ 
 .image-text {
   position: absolute;
   top: 50%;
@@ -25,8 +25,6 @@
   color: white;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-/* Form section */
 .form-section {
   flex: 1;
   padding: 40px;
@@ -35,17 +33,17 @@
   justify-content: center;
   align-items: center;
 }
-
+ 
 .form-wrapper {
   width: 100%;
   max-width: 400px;
 }
-
+ 
 .toggle-buttons {
   display: flex;
   margin-bottom: 20px;
 }
-
+ 
 .toggle-btn {
   flex: 1;
   padding: 12px;
@@ -56,12 +54,12 @@
   color: #333;
   transition: 0.3s;
 }
-
+ 
 .toggle-btn.active {
   background-color: #6c63ff;
   color: white;
 }
-
+ 
 .submit-btn {
   padding: 10px;
   background-color: #6c63ff;
@@ -76,7 +74,7 @@
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
 }
-
+ 
 .toggle-btn:last-child {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -85,14 +83,14 @@
   text-align: center;
   margin-top: 20px;
 }
-
+ 
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 10px;
 }
-
+ 
 .social-btn {
   background: none;
   border: none;
@@ -101,16 +99,16 @@
   border-radius: 50%;
   transition: transform 0.2s ease;
 }
-
+ 
 .social-btn:hover {
   transform: scale(1.1);
 }
-
+ 
 .social-btn img {
   width: 36px;
   height: 36px;
 }
-
+ 
 .guest-login-btn {
   display: block;
   width: 100%;
@@ -124,28 +122,26 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ 
 .guest-login-btn:hover {
   background-color: #e0e0e0;
 }
-
-/* Responsive layout for mobile */
 @media screen and (max-width: 768px) {
   .login-container {
     flex-direction: column;
   }
-
+ 
   .image-section {
     height: 150px;
     flex: none;
     position: relative;
   }
-
+ 
   .laundry-image {
     height: 100%;
     object-fit: cover;
   }
-
+ 
   .image-text {
     position: absolute;
     top: 50%;
@@ -153,7 +149,7 @@
     transform: translateY(-50%);
     font-size: 1.2rem;
   }
-
+ 
   .form-section {
     flex: none;
     padding: 20px;
@@ -168,3 +164,4 @@
       border-bottom-right-radius: 12px;
     }
 }
+ 

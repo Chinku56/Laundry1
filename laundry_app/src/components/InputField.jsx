@@ -2,13 +2,13 @@ import React from 'react'
 import { useState } from 'react';
 const InputField = ({ label, type, name, value, onChange, required, minLength, maxLength,placeholder ,width}) => {
     const [error, setError] = useState("");
-
+ 
     const validate = (val) => {
         if (required && !val) {
             setError(`${placeholder} is required`);
             return;
         }
-
+ 
         switch (type) {
             case "email":
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -17,14 +17,14 @@ const InputField = ({ label, type, name, value, onChange, required, minLength, m
                     return;
                 }
                 break;
-
+ 
             case "password":
                 if (val.length < 6) {
                     setError("Password must be at least 6 characters long");
                     return;
                 }
                 break;
-
+ 
             case "text":
                 if (minLength && val.length < minLength) {
                     setError(`${placeholder} Must be at least ${minLength} characters`);
@@ -35,21 +35,21 @@ const InputField = ({ label, type, name, value, onChange, required, minLength, m
                     return;
                 }
                 break;
-
+ 
             case "number":
                 if (isNaN(val)) {
                     setError("Must be a valid number");
                     return;
                 }
                 break;
-
+ 
             default:
                 break;
         }
-
+ 
         setError("");
     };
-
+ 
     return (
         <div style={{ marginBottom: "10px" }}>
             {/* <label>{label}:</label> */}
@@ -77,5 +77,5 @@ const InputField = ({ label, type, name, value, onChange, required, minLength, m
         </div>
     );
 };
-
+ 
 export default InputField;

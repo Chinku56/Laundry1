@@ -1,133 +1,112 @@
-// .subscriptions-page {
-//     padding: 2rem;
-//     text-align: center;
-  
-//     h2 {
-//       color: #333;
-//       font-size: 2rem;
-//       margin-bottom: 2rem;
-//     }
-  
-//     .plans-container {
-//       display: flex;
-//       justify-content: center;
-//       flex-wrap: wrap;
-//       gap: 2rem;
-//     }
-  
-//     .plan-card {
-//       background: #007bff; /* Blue background for the containers */
-//       border: 1px solid #ccc;
-//       border-radius: 12px;
-//       padding: 1.5rem;
-//       width: 280px;
-//       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  
-//       h3 {
-//         font-size: 1.4rem;
-//         margin-bottom: 0.5rem;
-//         color: white; /* White color for plan title */
-//       }
-  
-//       .duration,
-//       .price,
-//       .pickups {
-//         font-weight: bold;
-//         margin: 0.5rem 0;
-//         color: white; /* White color for the details */
-//       }
-  
-//       ul {
-//         list-style-type: square;
-//         padding-left: 1.2rem;
-//         text-align: left;
-//         color: white; /* White color for the list */
-//       }
-  
-//       .buy-button {
-//         margin-top: 1rem;
-//         padding: 0.5rem 1rem;
-//         background-color: #ffd700; /* Gold background for the button */
-//         color: rgb(3, 3, 3);
-//         border: none;
-//         border-radius: 8px;
-//         cursor: pointer;
-  
-//         &:hover {
-//           background-color: #faf6f6; /* Darker gold on hover */
-//         }
-//       }
-//     }
-//   }
 .subscriptions-page {
-    padding: 2rem;
-    text-align: center;
-    
-  
-    h2 {
+  padding: 1rem;
+  text-align: center;
+  background-color: #fbd000;
+
+  h2 {
+    color: rgb(6, 6, 6);
+    font-size: 2rem;
+    margin-top: 4rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .plans-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 0rem;
+
+    @media (max-width: 768px) {
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 1rem;
+      justify-content: space-between;
+    }
+  }
+
+  .plan-card {
+    background: #007bff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 280px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      background-color: #0056b3;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
       color: white;
-      font-size: 2rem;
-      margin-bottom: 2rem;
     }
-  
-    .plans-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
+
+    .duration,
+    .price,
+    .pickups {
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: white;
     }
-  
-    .plan-card {
-      background: #007bff; /* Blue background for the containers */
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 280px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
-      
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+      text-align: left;
+      color: white;
+    }
+
+    .buy-button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffd700;
+      color: rgb(3, 3, 3);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
       &:hover {
-        transform: translateY(-10px); /* Slight lift effect on hover */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-        background-color: #0056b3; /* Darker blue on hover */
-      }
-  
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-        color: white; /* White color for plan title */
-      }
-  
-      .duration,
-      .price,
-      .pickups {
-        font-weight: bold;
-        margin: 0.5rem 0;
-        color: white; /* White color for the details */
-      }
-  
-      ul {
-        list-style-type: square;
-        padding-left: 1.2rem;
-        text-align: left;
-        color: white; /* White color for the list */
-      }
-  
-      .buy-button {
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background-color: #ffd700;
-        color: rgb(3, 3, 3);
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease; 
-  
-        &:hover {
-          background-color: #ffcc00; 
-          transform: scale(1.05); 
-        }
+        background-color: #ffcc00;
+        transform: scale(1.05);
       }
     }
   }
-  
+
+  @media (max-width: 768px) {
+    .plan-card {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .plan-card {
+      width: 100%;
+    }
+
+    .plans-container {
+      gap: 1rem;
+    }
+
+    .buy-button {
+      width: 100%;
+      padding: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.why-laundrymate {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: white;
+  font-family: "Montserrat", sans-serif;
+
+  h2 {
+    font-size: 2.5rem;
+    color: #0070c0;
+    margin-bottom: 0.3rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .description {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+    }
+  }
+
+  .reasons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .reason {
+    max-width: 250px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      max-width: 200px;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 90%;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem auto;
+      background-color: #0070c0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        color: white;
+        font-size: 36px;
+      }
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      color: #0070c0;
+      margin-bottom: 0.8rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
+    }
+
+    p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.4;
+
+      @media (max-width: 768px) {
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+.footer {
+  background-color: #444;
+  color: white;
+  width: 90%;
+  padding: 3% 5%;
+  font-family: 'Segoe UI', sans-serif;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    width: 30%;
+    min-width: 250px;
+
+    .footer__logo {
+      font-size: 180%;
+      font-weight: bold;
+      margin-bottom: 4%;
+      line-height: 1.2;
+      color: yellow;
+    }
+
+    .footer__desc {
+      font-size: 95%;
+      line-height: 150%;
+    }
+
+    .read-more {
+      color: #ccc;
+      cursor: pointer;
+      font-size: 90%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .footer__column {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      font-size: 95%;
+
+      h4 {
+        font-weight: bold;
+        margin-bottom: 5%;
+        letter-spacing: 1px;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        margin: 4% 0;
+        font-size: 90%;
+
+        &:hover {
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+  &__address {
+    width: 25%;
+    min-width: 200px;
+    font-size: 95%;
+
+    h4 {
+      font-weight: bold;
+      margin: 6% 0 3%;
+      letter-spacing: 1px;
+    }
+
+    p {
+      margin: 3% 0;
+      font-size: 90%;
+      line-height: 150%;
+    }
+  }
+
+  .footer__social {
+    margin-top: -80px;
+    text-align: center;
+  }
+
+  .footer__social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer__social-icons a {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+  }
+
+  .footer__social-icons svg {
+    width: 20%;
+    height: 20%;
+  }
+
+  // ** Responsiveness for different screen sizes **
+
+  // For tablets and below (max-width: 768px)
+  @media (max-width: 768px) {
+    padding: 2% 4%; 
+
+    .footer__brand {
+      width: 40%;
+    }
+
+    .footer__links {
+      width: 50%; 
+      justify-content: flex-start; 
+    }
+
+    .footer__address {
+      width: 100%; 
+      margin-top: 20px; 
+    }
+
+    .footer__social {
+      margin-top: 20px; 
+    }
+
+    .footer__social-icons svg {
+      width: 25%;
+      height: 25%; 
+    }
+  }
+
+  // For mobile screens (max-width: 480px)
+  @media (max-width: 480px) {
+    .footer__content {
+      flex-direction: column;
+      align-items: center; 
+      text-align: center; 
+    }
+
+    .footer__brand {
+      width: 100%; 
+      margin-bottom: 20px; 
+    }
+
+    .footer__links {
+      width: 100%; 
+      justify-content: center; 
+    }
+
+    .footer__address {
+      width: 100%; 
+      margin-top: 20px;
+    }
+
+    .footer__social-icons {
+      gap: 10px; 
+    }
+
+    .footer__social-icons svg {
+      width: 30%;
+      height: 30%; 
+    }
+
+    .footer__logo {
+      font-size: 150%; 
+    }
+
+    .footer__desc {
+      font-size: 85%;
+    }
+  }
+}

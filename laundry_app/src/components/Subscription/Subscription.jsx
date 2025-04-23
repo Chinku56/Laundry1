@@ -2,6 +2,7 @@ import React from "react";
 import { FaTags } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./Subscription.scss";
+import Navbar from "../NavBar";
 
 const Subscriptions = () => {
   const plans = [
@@ -39,7 +40,9 @@ const Subscriptions = () => {
   };
 
   return (
-    <div className="subscriptions-page">
+    <div>
+      <Navbar/>
+    <div className="subscriptions-page" >
       <h2>
         <FaTags style={{ marginRight: "10px", color: "#4355f5" }} />
         Choose Your Plan
@@ -66,6 +69,7 @@ const Subscriptions = () => {
         ))}
       </div>
     </div>
+  </div>
   );
 };
 
