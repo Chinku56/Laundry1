@@ -1,64 +1,73 @@
 import React, { useState } from 'react';
 import InputField from '../components/InputField';
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import '../pages/Login.scss';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
- 
+
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     name: '',
   });
- 
+
   const showToast = (message, type) => {
     if (type === 'error') toast.error(message);
     else toast.success(message);
   };
- 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password, name } = formData;
- 
+
     if (!email || !password || (!isLogin && !name)) {
       showToast("Please fill in all required fields", "error");
       return;
     }
- 
+
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       showToast("Invalid email format", "error");
       return;
     }
- 
+
     if (password.length < 6) {
       showToast("Password must be at least 6 characters", "error");
       return;
     }
- 
+
     if (!isLogin && name.length < 2) {
       showToast("Name must be at least 2 characters", "error");
       return;
     }
- 
+
     if (isLogin) {
-      if (email.toLowerCase() !== 'admin@gmail.com' || password !== 'Password@5') {
+      if (email.toLowerCase() !== 'chinna123@gmail.com' || password !== '123456787') {
         showToast("Incorrect email or password", "error");
         return;
       }
     }
- 
+
+    // Save user data to session
+    sessionStorage.setItem('userData', JSON.stringify(formData));
+
     showToast(isLogin ? "Logged in successfully!" : "Account created!", "success");
     console.log(isLogin ? "Logging in..." : "Signing up...", formData);
+
+    // Redirect to home
+    setTimeout(() => {
+      navigate("/home");
+    }, 1000);
   };
- 
+
   return (
     <div className="login-container">
       <ToastContainer />
@@ -73,7 +82,7 @@ const LoginPage = () => {
           <p>Freshness Delivered.</p>
         </div>
       </div>
- 
+
       <div className="form-section">
         <div className="form-wrapper">
           <div className="toggle-buttons">
@@ -90,7 +99,7 @@ const LoginPage = () => {
               Sign Up
             </button>
           </div>
- 
+
           <form onSubmit={handleSubmit}>
             {!isLogin && (
               <InputField
@@ -125,11 +134,12 @@ const LoginPage = () => {
               required
               width="94%"
             />
-            <Link to="/home"><button type="submit" className="submit-btn">
+
+            <button type="submit" className="submit-btn">
               {isLogin ? 'Login' : 'Create Account'}
-            </button></Link>
- 
-            {/* Social Login Icons with Redirect */}
+            </button>
+
+            {/* Social Login */}
             <div className="social-login">
               <p>Or continue with</p>
               <div className="social-icons">
@@ -149,12 +159,17 @@ const LoginPage = () => {
                 </button>
               </div>
             </div>
- 
-            {/* Guest Login Button */}
+
+            {/* Guest Login */}
             <button
               type="button"
               className="guest-login-btn"
-              onClick={() => showToast("Successfully logged in as Guest!", "success")}
+              onClick={() => {
+                showToast("Successfully logged in as Guest!", "success");
+                setTimeout(() => {
+                  navigate("/home");
+                }, 1000);
+              }}
             >
               Continue as Guest
             </button>
@@ -164,5 +179,5 @@ const LoginPage = () => {
     </div>
   );
 };
- 
+
 export default LoginPage;
