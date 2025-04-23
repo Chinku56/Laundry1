@@ -1,11 +1,14 @@
 .order-tracking {
   text-align: center;
-  padding: 30px;
+  padding: 5%;
+  background-color: #fbd000;
+  font-family: "Montserrat", sans-serif;
 
   .order-details {
-    margin-bottom: 30px;
+    margin-top: 30px;
     p {
       margin: 5px 0;
+      font-size: 1rem;
     }
   }
 
@@ -20,7 +23,8 @@
     align-items: center;
     position: relative;
     margin: 30px auto;
-    max-width: 800px;
+    max-width: 100%;
+    min-width: 320px;
   }
 
   .timeline-step {
@@ -29,12 +33,13 @@
     align-items: center;
     position: relative;
     width: 100%;
-    min-width: 120px;
+    min-width: 100px;
+    padding: 0 10px;
 
     .step-icon {
       background-color: #ccc;
       color: white;
-      font-size: 24px;
+      font-size: 1.2rem;
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -48,7 +53,8 @@
 
     .step-label {
       margin-top: 10px;
-      font-size: 14px;
+      font-size: 0.9rem;
+      text-align: center;
     }
 
     .line {
@@ -79,5 +85,93 @@
     margin-top: 20px;
     font-weight: bold;
     color: #28a745;
+    font-size: 1rem;
+  }
+
+  .Back {
+    background-color: #0071bc;
+    color: white;
+    width: 150px;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 85%;
+    text-decoration: none;
+  }
+
+  .Back:hover {
+    background-color: #0071bc;
+    transform: scale(1.1);
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-30px);  
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  .celebration-icon {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 80px;  
+    animation: bounce 1s infinite;
+    z-index: 1000;
+  }
+  
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    .timeline {
+      flex-direction: row;
+      overflow-x: auto;
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    .timeline-step {
+      min-width: 80px;
+
+      .step-label {
+        font-size: 0.8rem;
+      }
+
+      .step-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+    }
+
+    .Back {
+      width: 80%;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .timeline-step .step-label {
+      font-size: 0.75rem;
+    }
+
+    .step-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 0.9rem;
+    }
+
+    .Back {
+      width: 90%;
+    }
   }
 }

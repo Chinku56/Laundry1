@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./DryClean.scss";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../components/CartContext";
+import Navbar from "./NavBar";
 
 const tabs = ["Men", "Women", "Kids", "House Hold"];
 
@@ -52,6 +53,9 @@ const DryClean = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
+    
     <div className="dryclean-container">
       <h2 className="title">Dry Clean Prices</h2>
       <p className="subtitle">
@@ -105,6 +109,7 @@ const DryClean = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Servicehours.scss";
+import Navbar from "./NavBar";
 
 const servicehours = [
   {
@@ -28,6 +29,9 @@ const servicehours = [
 
 const Servicehours = () => {
   return (
+    <div>
+      <Navbar/>
+    
     <div className="message-service-hours">
       <h1>🕒 Service Hours</h1>
       <div className="messages">
@@ -39,6 +43,7 @@ const Servicehours = () => {
         ))}
       </div>
     </div>
+  </div>
   );
 };
 

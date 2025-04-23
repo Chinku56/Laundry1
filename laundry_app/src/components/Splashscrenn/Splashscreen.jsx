@@ -1,32 +1,20 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Splashscreen.scss';
 
-const SplashScreen = () => {
-  // const navigate = useNavigate();
+const Splashscreen = () => {
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     const isLoggedIn = localStorage.getItem('isLoggedIn');
-  //     if (isLoggedIn) {
-  //       navigate('/dashboard');
-  //     } else {
-  //       navigate('/login');
-  //     }
-  //   }, 3000);
-
-  //   return () => clearTimeout(timer);
-  // }, [navigate]);
 
   return (
     <div className="splash-container">
       <div className="logo-wrapper">
         <div className="logo">🧺</div>
         <h1 className="brand-name">Wash-O-Matic</h1>
+        <p className="tagline">We Wash, You Chill.</p>
       </div>
-      <button className='tagname'>Get started</button>
+      <Link to="/login"><button  className='tagname'>Get started</button></Link>
     </div>
   );
 };
 
-export default SplashScreen;
+export default Splashscreen;

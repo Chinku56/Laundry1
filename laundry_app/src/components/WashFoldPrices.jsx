@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./WashFoldPrices.scss";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../components/CartContext";
+import Navbar from "./NavBar";
 
 const tabs = ["Men", "Women", "Kids", "House Hold"];
 
@@ -56,6 +57,9 @@ const WashFoldPrices = () => {
 
   const navigate = useNavigate();
   return (
+    <div>
+      <Navbar/>
+   
     <div className="washfold-container">
       <h2 className="title">Wash & Fold Prices</h2>
       <p className="subtitle">
@@ -110,6 +114,7 @@ const WashFoldPrices = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

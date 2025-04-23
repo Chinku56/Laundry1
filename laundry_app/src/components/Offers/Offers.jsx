@@ -1,7 +1,11 @@
 import React from "react";
-import "./Promotionalbanners.scss";
+import "./Offers.scss";
+import Navbar from "../NavBar";
+
 
 const offers = [
+  
+  
   {
     title: "SPECIAL OFFER ON DRY CLEANING",
     discount: "20% OFF",
@@ -56,6 +60,10 @@ const offers = [
 
 const Offers = () => {
   return (
+    <div>
+      <Navbar />
+        
+    
     <div className="offers-container">
       {offers.map((offer, index) => (
         <div
@@ -81,6 +89,8 @@ const Offers = () => {
         </div>
       ))}
     </div>
+  </div>
+ 
   );
 };
 

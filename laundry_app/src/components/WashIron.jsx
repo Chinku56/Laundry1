@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./WashIron.scss";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../components/CartContext";
+import Navbar from "./NavBar";
 
 const tabs = ["Men", "Women", "Kids", "House Hold"];
 
@@ -52,6 +53,9 @@ const WashIron = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
+    
     <div className="washiron-container">
       <h2 className="title">Wash & Iron Prices</h2>
       <p className="subtitle">
@@ -106,6 +110,7 @@ const WashIron = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

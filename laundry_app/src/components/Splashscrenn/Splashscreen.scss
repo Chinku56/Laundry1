@@ -1,12 +1,13 @@
 .splash-container {
   width: 100%;
   height: 100vh;
-  background-color: #ffeb3b; /* Updated to yellow */
+  background-color: #ffeb3b; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  padding: 0%;
+  font-family: "Montserrat", sans-serif;
 
   .logo-wrapper {
     display: flex;
@@ -14,8 +15,21 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 1.5vh; // 🔥 nicely spaces elements without hard margins
+    gap: 1.5vh; 
   }
+  .tagline {
+    font-size: 4vw;
+    font-weight: 500;
+    color: #1a237e;
+    margin-top: 0.5vh;
+    font-style: italic;
+    text-align: center;
+  
+    @media (min-width: 768px) {
+      font-size: 1.5vw;
+    }
+  }
+  
 
   .logo {
     font-size: 20vw;
@@ -26,22 +40,23 @@
     font-size: 8vw;
     font-weight: bold;
     color: #0d47a1;
-    margin: 0; // ✅ remove margin-top if unnecessary
+    margin: 0; 
   }
 
   .tagname {
-    padding: 1% 3%;
+    padding: 1% 10%;
     border-radius: 8px;
     font-size: 110%;
     color: #f6f7f8;
     font-weight: 500;
     text-align: center;
-    background-color: black;
+    background-color: blue;
     cursor: pointer;
     transition: background 0.3s;
+    text-decoration: none;
 
     &:hover {
-      background-color: #333;
+      background-color: green;
     }
   }
 

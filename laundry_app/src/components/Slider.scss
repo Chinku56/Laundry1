@@ -19,6 +19,7 @@
     width: 100%;
     padding: 0% 6%;
     box-sizing: border-box;
+    flex-wrap: wrap;
 
     &.active {
       opacity: 1;
@@ -31,7 +32,7 @@
       color: #005bbb;
 
       h1 {
-        font-size: 5vw; // Scales with screen size
+        font-size: 5vw;
         font-weight: 900;
         color: #fff;
         margin-bottom: 1%;
@@ -47,6 +48,7 @@
       .slide__buttons {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         .btn {
           padding: 1.5% 3%;
@@ -57,13 +59,29 @@
           text-decoration: none;
           margin-right: 2%;
           font-size: 1.2vw;
+          white-space: nowrap;
+
+          @media (max-width: 768px) {
+            font-size: 3vw;
+            padding: 2% 4%;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 4vw;
+            padding: 3% 5%;
+            margin-bottom: 5%;
+          }
         }
 
         .divider {
           height: 5vh;
-          width: 0.2%;
+          width: 1px;
           background-color: #005bbb;
           margin: 0 2%;
+
+          @media (max-width: 480px) {
+            display: none;
+          }
         }
       }
     }
@@ -78,6 +96,30 @@
         max-height: 60vh;
         object-fit: contain;
         border-radius: 50%;
+
+        @media (max-width: 768px) {
+          max-height: 40vh;
+        }
+
+        @media (max-width: 480px) {
+          max-height: 30vh;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &__content,
+      &__image {
+        max-width: 100%;
+      }
+
+      &__image {
+        justify-content: center;
+        margin-top: 5%;
       }
     }
   }
@@ -101,6 +143,11 @@
     &.right {
       right: 1%;
     }
+
+    @media (max-width: 480px) {
+      font-size: 6vw;
+      padding: 2%;
+    }
   }
 
   .dots {
@@ -122,6 +169,12 @@
 
       &.active {
         background: #0073e6;
+      }
+
+      @media (max-width: 480px) {
+        height: 12px;
+        width: 12px;
+        margin: 0 4px;
       }
     }
   }

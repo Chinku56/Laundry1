@@ -25,6 +25,7 @@
       margin-right: 80%;
     }
   }
+  
 
   .navbar__menu {
     width: 60%;
@@ -108,26 +109,27 @@
     gap: 10%;
 
     .btn {
-      font-weight: 600;
-      padding: 8px 16px;
+      font-weight: 500;
+      padding: 9px 10px;
       font-size: 85%;
       border: none;
       cursor: pointer;
       text-align: center;
 
       &--outline {
-        background-color: #0071bc;
+        background-color: #1ba2fc;
         border: 2px solid #0071bc;
         color: #fff;
-        border-radius: 10%;
+        border-radius: 1rem;
         text-decoration: none;
       }
 
       &--filled {
         background-color: #0071bc;
         color: #fff;
-        border-radius: 10%;
+        border-radius: 1rem;
         text-decoration: none;
+       
       }
     }
   }
@@ -195,3 +197,4 @@
     }
   }
 }
+

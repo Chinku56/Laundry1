@@ -37,7 +37,7 @@ const reasons = [
 const WhyLaundryMate = () => {
   return (
     <section className="why-laundrymate">
-      <h2>Why Laundry?</h2>
+      <h2>Why Wash-O-Matic?</h2>
       <p className="subtitle">(Why ever not, actually?)</p>
       <p className="description">
         Word’s got around, hasn’t it? We are Hyderabad’s shiny new app backed by
