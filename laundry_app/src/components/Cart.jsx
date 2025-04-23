@@ -7,7 +7,7 @@ const Cart = () => {
   const { cartItems, addToCart, removeFromCart, clearCart } = useContext(CartContext);
   const navigate = useNavigate();
 
-  // Group items by name and calculate the total price
+  
   const groupedItems = cartItems.reduce((acc, item) => {
     const key = item.name;
     acc[key] = acc[key] || { ...item, quantity: 0 };
@@ -18,10 +18,9 @@ const Cart = () => {
   const itemsArray = Object.values(groupedItems);
   const total = itemsArray.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  // Handle the "Clear Cart" button click
   const handleClearCart = () => {
     if (window.confirm('Are you sure you want to clear all items from your cart?')) {
-      clearCart(); // This will clear the cart
+      clearCart();
     }
   };
 
@@ -48,7 +47,7 @@ const Cart = () => {
           <div className="cart-summary">
             <h3>Total: ₹{total}</h3>
 
-            {/* Clear Cart Button */}
+            
             <button className="clear-cart-btn" onClick={handleClearCart}>
               Clear Cart
             </button> <br />
