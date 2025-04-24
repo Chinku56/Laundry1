@@ -31,7 +31,9 @@
 
     @media (max-width: 480px) {
       gap: 1rem;
-      justify-content: space-between;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -96,17 +98,31 @@
   }
 
   @media (max-width: 480px) {
-    .plan-card {
-      width: 100%;
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
     }
 
     .plans-container {
       gap: 1rem;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .plan-card {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .plan-card h3 {
+      font-size: 1.2rem;
     }
 
     .buy-button {
       width: 100%;
       padding: 0.8rem;
+      font-size: 1rem;
     }
   }
 }

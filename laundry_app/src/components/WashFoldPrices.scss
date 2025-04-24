@@ -1,9 +1,8 @@
 .washfold-container {
   width: 100%;
-  padding: 2% 3%;
+  padding: 2% 0%;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  margin-left: -5%;
   background-color: #fbd000;
 
   .title {
@@ -74,7 +73,7 @@
     max-height: 50%;
     overflow-y: auto;
     margin-top: 2%;
-    padding: 0 10%;
+    padding: 0 5%;
     margin-left: 10%;
 
     .price-item {
@@ -190,7 +189,7 @@
       font-size: 150%;
       font-weight: bold;
       margin-top: 2%;
-      margin-left: 45%;
+      margin-left: 10%;
 
       @media (max-width: 768px) {
         margin-left: 30%;

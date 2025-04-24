@@ -10,7 +10,7 @@ const Promotional= () => {
           <h2>LAUNDRY SERVICE</h2>
           <p>Breathe new life into laundry😂,Wash away your worries💕</p>
           <p>Fresh, clean clothes delivered to your door. Try us today!</p>
-          <a href="/home" className="read-more">Enjoy😍</a>
+          <a href="/home" className="read-more">Enjoy😍 Go To Home</a>
         </div>
       </div>
  

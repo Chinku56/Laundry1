@@ -60,7 +60,7 @@
     }
   }
 
-  // Responsive styles
+ 
   @media (max-width: 1024px) {
     .description {
       width: 80%;
@@ -86,41 +86,54 @@
       }
     }
   }
-
-  @media (max-width: 600px) {
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-    }
-
-    .description {
-      width: 95%;
-      font-size: 1rem;
-    }
-
-    .process-steps {
-      flex-direction: column;
-      align-items: center;
-
-      .step {
-        width: 90%;
+  @media (max-width: 480px) {
+    .our-process {
+      padding: 8% 5%;
+  
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 3%;
+      }
+  
+      .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2.5%;
+      }
+  
+      .description {
+        width: 100%;
+        font-size: 0.95rem;
         margin-bottom: 6%;
-
-        .icon {
-          font-size: 2rem;
-        }
-
-        h3 {
-          font-size: 1.1rem;
-        }
-
-        p {
-          font-size: 0.9rem;
+      }
+  
+      .process-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 5%;
+  
+        .step {
+          width: 100%;
+          margin-bottom: 8%;
+  
+          .icon {
+            width: 50%;
+            font-size: 1.8rem;
+            padding-top: 8%;
+            margin-bottom: 8%;
+          }
+  
+          h3 {
+            font-size: 1rem;
+            margin-bottom: 4%;
+          }
+  
+          p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+          }
         }
       }
     }
   }
+  
 }

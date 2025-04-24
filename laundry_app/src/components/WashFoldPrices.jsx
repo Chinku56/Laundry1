@@ -58,63 +58,63 @@ const WashFoldPrices = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <Navbar/>
-   
-    <div className="washfold-container">
-      <h2 className="title">Wash & Fold Prices</h2>
-      <p className="subtitle">
-        Amazingly affordable is the only way to phrase it. That too for a wash
-        and fold service. Happens when the tech kicks in.
-      </p>
+      <Navbar />
 
-      <div className="tabs">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className={`tab ${tab === activeTab ? "active" : ""}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+      <div className="washfold-container">
+        <h2 className="title">Wash & Fold Prices</h2>
+        <p className="subtitle">
+          Amazingly affordable is the only way to phrase it. That too for a wash
+          and fold service. Happens when the tech kicks in.
+        </p>
 
-      <div className="price-list">
-        {data[activeTab].map((item, index) => {
-          const count = getItemCount(item);
+        <div className="tabs">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              className={`tab ${tab === activeTab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
 
-          return (
-            <div key={index} className="price-item">
-              <div className="icon">{item.icon}</div>
-              <div className="details">
-                <p>{item.name}</p>
-                <span>₹{item.price}</span>
+        <div className="price-list">
+          {data[activeTab].map((item, index) => {
+            const count = getItemCount(item);
+
+            return (
+              <div key={index} className="price-item">
+                <div className="icon">{item.icon}</div>
+                <div className="details">
+                  <p>{item.name}</p>
+                  <span>₹{item.price}</span>
+                </div>
+                <div className="controls">
+                  <button
+                    onClick={() => removeFromCart(item)}
+                    disabled={count === 0}
+                  >
+                    -
+                  </button>
+                  <span>{count}</span>
+                  <button onClick={() => addToCart(item)}>+</button>
+                </div>
               </div>
-              <div className="controls">
-                <button
-                  onClick={() => removeFromCart(item)}
-                  disabled={count === 0}
-                >
-                  -
-                </button>
-                <span>{count}</span>
-                <button onClick={() => addToCart(item)}>+</button>
-              </div>
-            </div>
-          );
-        })}
-        <div className="total">
-          Total: ₹{total}
-          <button
-            className="pay-btn1"
-            onClick={() => navigate("/cart")}
-            style={{ marginLeft: "10%" }}
-          >
-            View Cart
-          </button>
+            );
+          })}
+          <div className="total">
+            Total: ₹{total}
+            <button
+              className="pay-btn1"
+              onClick={() => navigate("/cart")}
+              style={{ marginLeft: "36%" }}
+            >
+              View Cart
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

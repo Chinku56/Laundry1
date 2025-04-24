@@ -1,44 +1,48 @@
-import React, { useState, useContext } from 'react';
-import './Cartpayment.scss';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { FaCreditCard } from 'react-icons/fa';
-import { MdCreditCard, MdOutlineQrCodeScanner, MdCheckCircle } from 'react-icons/md';
-import { Link, useNavigate } from 'react-router-dom';
-import { CartContext } from './CartContext';
+import React, { useState, useContext } from "react";
+import "./Cartpayment.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaCreditCard } from "react-icons/fa";
+import {
+  MdCreditCard,
+  MdOutlineQrCodeScanner,
+  MdCheckCircle,
+} from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 const CartPayment = () => {
   const { total } = useContext(CartContext);
-  const [selectedOption, setSelectedOption] = useState('');
-  const [upiId, setUpiId] = useState('');
+  const [selectedOption, setSelectedOption] = useState("");
+  const [upiId, setUpiId] = useState("");
   const [cardDetails, setCardDetails] = useState({
-    number: '',
-    expiry: '',
-    cvv: '',
+    number: "",
+    expiry: "",
+    cvv: "",
   });
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handlePayment = () => {
     if (
-      (selectedOption === 'upi' && !upiId) ||
-      ((selectedOption === 'debit' || selectedOption === 'credit') &&
+      (selectedOption === "upi" && !upiId) ||
+      ((selectedOption === "debit" || selectedOption === "credit") &&
         (!cardDetails.number || !cardDetails.expiry || !cardDetails.cvv))
     ) {
-      toast.error('Please fill in all required fields');
+      toast.error("Please fill in all required fields");
       return;
     }
 
-    toast.success('Your payment was successful!');
+    toast.success("Your payment was successful!");
     setPaymentSuccess(true);
   };
 
   const handleScheduleRedirect = () => {
     if (!paymentSuccess) {
-      toast.error('Please complete your payment before scheduling.');
+      toast.error("Please complete your payment before scheduling.");
       return;
     }
-    navigate('/OrderTracking');
+    navigate("/OrderTracking");
   };
 
   return (
@@ -46,29 +50,43 @@ const CartPayment = () => {
       <h2>Select Payment Method</h2>
 
       <div className="payment2">
-        <div className={`option1 ${selectedOption === 'upi' ? 'selected' : ''}`} onClick={() => setSelectedOption('upi')}>
+        <div
+          className={`option1 ${selectedOption === "upi" ? "selected" : ""}`}
+          onClick={() => setSelectedOption("upi")}
+        >
           <MdOutlineQrCodeScanner size={30} color="#673AB7" />
           <span>UPI</span>
         </div>
-        <div className={`option1 ${selectedOption === 'debit' ? 'selected' : ''}`} onClick={() => setSelectedOption('debit')}>
+        <div
+          className={`option1 ${selectedOption === "debit" ? "selected" : ""}`}
+          onClick={() => setSelectedOption("debit")}
+        >
           <MdCreditCard size={30} color="#3F51B5" />
           <span>Debit Card</span>
         </div>
-        <div className={`option1 ${selectedOption === 'credit' ? 'selected' : ''}`} onClick={() => setSelectedOption('credit')}>
+        <div
+          className={`option1 ${selectedOption === "credit" ? "selected" : ""}`}
+          onClick={() => setSelectedOption("credit")}
+        >
           <FaCreditCard size={30} color="#009688" />
           <span>Credit Card</span>
         </div>
       </div>
 
       <div className="payment3">
-        {selectedOption === 'upi' && (
+        {selectedOption === "upi" && (
           <>
             <label>Enter UPI ID</label>
-            <input type="text" value={upiId} onChange={(e) => setUpiId(e.target.value)} placeholder="example@upi" />
+            <input
+              type="text"
+              value={upiId}
+              onChange={(e) => setUpiId(e.target.value)}
+              placeholder="example@upi"
+            />
           </>
         )}
 
-        {(selectedOption === 'debit' || selectedOption === 'credit') && (
+        {(selectedOption === "debit" || selectedOption === "credit") && (
           <>
             <label>Card Number</label>
             <input
@@ -76,7 +94,9 @@ const CartPayment = () => {
               maxLength={16}
               placeholder="1234 5678 9012 3456"
               value={cardDetails.number}
-              onChange={(e) => setCardDetails({ ...cardDetails, number: e.target.value })}
+              onChange={(e) =>
+                setCardDetails({ ...cardDetails, number: e.target.value })
+              }
             />
             <label>Expiry Date</label>
             <input
@@ -84,7 +104,9 @@ const CartPayment = () => {
               maxLength={5}
               placeholder="MM/YY"
               value={cardDetails.expiry}
-              onChange={(e) => setCardDetails({ ...cardDetails, expiry: e.target.value })}
+              onChange={(e) =>
+                setCardDetails({ ...cardDetails, expiry: e.target.value })
+              }
             />
             <label>CVV</label>
             <input
@@ -92,7 +114,9 @@ const CartPayment = () => {
               maxLength={3}
               placeholder="123"
               value={cardDetails.cvv}
-              onChange={(e) => setCardDetails({ ...cardDetails, cvv: e.target.value })}
+              onChange={(e) =>
+                setCardDetails({ ...cardDetails, cvv: e.target.value })
+              }
             />
           </>
         )}
@@ -109,10 +133,13 @@ const CartPayment = () => {
             <MdCheckCircle size={60} color="green" className="success-icon" />
             <p className="success-text">Payment Successful!</p>
             <div className="delayed-schedule">
-            <Link to="/Order-tracking">
-              <button className="schedule-btn" onClick={handleScheduleRedirect}>
-                Confirm Schedule
-              </button>
+              <Link to="/Order-tracking">
+                <button
+                  className="schedule-btn"
+                  onClick={handleScheduleRedirect}
+                >
+                  Confirm Schedule
+                </button>
               </Link>
             </div>
           </div>

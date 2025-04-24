@@ -112,25 +112,23 @@
       transform: translateX(-50%) translateY(0);
     }
     50% {
-      transform: translateX(-50%) translateY(-30px);  
+      transform: translateX(-50%) translateY(-30px);
     }
     100% {
       transform: translateX(-50%) translateY(0);
     }
   }
-  
+
   .celebration-icon {
     position: fixed;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 80px;  
+    font-size: 80px;
     animation: bounce 1s infinite;
     z-index: 1000;
   }
-  
 
-  // Responsive styles
   @media (max-width: 768px) {
     .timeline {
       flex-direction: row;

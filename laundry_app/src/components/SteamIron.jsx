@@ -103,7 +103,7 @@ const SteamIron = () => {
           <button
             className="pay-btn1"
             onClick={() => navigate("/cart")}
-            style={{ marginLeft: "10%" }}
+            style={{ marginLeft: "36%" }}
           >
             View Cart
           </button>

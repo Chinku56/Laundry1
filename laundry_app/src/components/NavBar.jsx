@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { GiShoppingCart } from "react-icons/gi";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -28,14 +28,19 @@ const Navbar = () => {
       <div className="navbar__container">
         <div className="navbar__logo">
           <Link to="/">
-            <img src="/assets/images/Wash-O-Matic.png" alt="LaundryMate Logo" />
+            <img src="/assets/images/Wash-O-Matic.png" alt="Wash-O-Matic Logo" />
           </Link>
         </div>
 
         <div ref={menuRef} className={`navbar__menu ${menuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <Link to="/home">HOME</Link>
+              <NavLink
+                to="/home"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                HOME
+              </NavLink>
             </li>
             <li
               className="has-dropdown"
@@ -46,52 +51,82 @@ const Navbar = () => {
               {servicesOpen && (
                 <ul className="dropdown">
                   <li>
-                    <Link to="/washfoldprices">WASH AND FOLD</Link>
+                    <NavLink
+                      to="/washfoldprices"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      WASH AND FOLD
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/washiron">WASH AND IRON</Link>
+                    <NavLink
+                      to="/washiron"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      WASH AND IRON
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/steamiron">STEAM IRON</Link>
+                    <NavLink
+                      to="/steamiron"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      STEAM IRON
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/dryclean">DRY CLEAN</Link>
+                    <NavLink
+                      to="/dryclean"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      DRY CLEAN
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/Promotional">PROMOTIONAL BANNER</Link>
+                    <NavLink
+                      to="/Promotional"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      PROMOTIONAL BANNER
+                    </NavLink>
                   </li>
                 </ul>
               )}
             </li>
             <li>
-              <Link to="/Servicehours">SERVICE HOURS</Link>
+              <NavLink
+                to="/Servicehours"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                SERVICE HOURS
+              </NavLink>
             </li>
             <li>
-              <Link to="/Subscriptions">CLUB ULTIMATE</Link>
+              <NavLink
+                to="/Subscriptions"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                CLUB ULTIMATE
+              </NavLink>
             </li>
-            
-            <li>
-              <Link to="/cart">
-                <GiShoppingCart style={{ fontSize: "24px", color: "#000", marginLeft:"50%" }} />
-              </Link>
-            </li>
+
             <li style={{ position: "relative" }}>
-              <Link to="/Offers">
-                <NotificationsNoneIcon
-                  style={{ fontSize: "24px", color: "#000" }}
-                />
+              <Link
+                to="/cart"
+                style={{ position: "relative", display: "inline-block" }}
+              >
+                <GiShoppingCart style={{ fontSize: "24px", color: "#000" }} />
                 {total > 0 && (
                   <span
                     style={{
                       position: "absolute",
-                      top: "0",
-                      right: "0",
+                      top: "-6px",
+                      right: "-10px",
                       background: "red",
                       color: "#fff",
                       padding: "2px 6px",
                       borderRadius: "50%",
                       fontSize: "12px",
-                      marginRight:"200%"
                     }}
                   >
                     ₹{total}
@@ -101,12 +136,18 @@ const Navbar = () => {
             </li>
 
             <li style={{ position: "relative" }}>
+              <Link to="/Offers">
+                <NotificationsNoneIcon
+                  style={{ fontSize: "24px", color: "#000" }}
+                />
+              </Link>
+            </li>
+
+            <li style={{ position: "relative" }}>
               <Link to="/Accountpage">
                 <AccountCircleIcon
                   style={{ fontSize: "24px", color: "#000" }}
                 />
-                
-              
               </Link>
             </li>
 

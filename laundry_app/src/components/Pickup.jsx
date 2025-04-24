@@ -55,7 +55,7 @@ const Pickup = () => {
       agent,
     };
 
-    // Update the context values
+   
     setSelectedAgent(agent);
     setPickupDetails(details);
 

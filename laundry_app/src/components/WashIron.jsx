@@ -54,63 +54,63 @@ const WashIron = () => {
 
   return (
     <div>
-      <Navbar/>
-    
-    <div className="washiron-container">
-      <h2 className="title">Wash & Iron Prices</h2>
-      <p className="subtitle">
-        Perfectly pressed, wrinkle-free clothes right to your doorstep. Get the
-        magic of pro ironing.
-      </p>
+      <Navbar />
 
-      <div className="tabs">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className={`tab ${tab === activeTab ? "active" : ""}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+      <div className="washiron-container">
+        <h2 className="title">Wash & Iron Prices</h2>
+        <p className="subtitle">
+          Perfectly pressed, wrinkle-free clothes right to your doorstep. Get
+          the magic of pro ironing.
+        </p>
 
-      <div className="price-list">
-        {data[activeTab].map((item, index) => {
-          const count = getItemCount(item);
-          return (
-            <div key={index} className="price-item">
-              <div className="icon">{item.icon}</div>
-              <div className="details">
-                <p>{item.name}</p>
-                <span>₹{item.price}</span>
+        <div className="tabs">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              className={`tab ${tab === activeTab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        <div className="price-list">
+          {data[activeTab].map((item, index) => {
+            const count = getItemCount(item);
+            return (
+              <div key={index} className="price-item">
+                <div className="icon">{item.icon}</div>
+                <div className="details">
+                  <p>{item.name}</p>
+                  <span>₹{item.price}</span>
+                </div>
+                <div className="controls">
+                  <button
+                    onClick={() => removeFromCart(item)}
+                    disabled={count === 0}
+                  >
+                    -
+                  </button>
+                  <span>{count}</span>
+                  <button onClick={() => addToCart(item)}>+</button>
+                </div>
               </div>
-              <div className="controls">
-                <button
-                  onClick={() => removeFromCart(item)}
-                  disabled={count === 0}
-                >
-                  -
-                </button>
-                <span>{count}</span>
-                <button onClick={() => addToCart(item)}>+</button>
-              </div>
-            </div>
-          );
-        })}
-        <div className="total">
-          Total: ₹{total}
-          <button
-            className="pay-btn1"
-            onClick={() => navigate("/cart")}
-            style={{ marginLeft: "10%" }}
-          >
-            View Cart
-          </button>
+            );
+          })}
+          <div className="total">
+            Total: ₹{total}
+            <button
+              className="pay-btn1"
+              onClick={() => navigate("/cart")}
+              style={{ marginLeft: "36%" }}
+            >
+              View Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 

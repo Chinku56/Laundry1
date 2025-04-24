@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa";
 import { MdDryCleaning } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./NavBar";
 
 const services = [
   { title: "WASH + FOLD", icon: <FaShoppingBasket />, color: "#0072c6" },
@@ -33,8 +32,6 @@ const Services = () => {
   };
 
   return (
-    
-  
     <section className="services">
       <h2 className="services__title">Our Services</h2>
       <p className="services__subtitle">(Go ahead, make our day!)</p>
@@ -77,7 +74,6 @@ const Services = () => {
         ))}
       </div>
     </section>
-    
   );
 };
 
