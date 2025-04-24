@@ -149,10 +149,11 @@ const InputField = ({
         style={{
           display: 'flex',
           alignItems: 'center',
-          border: error ? '3px solid red' : '1px solid #ccc',
+          border: error ? '3px solid red' : '1px solid black',
           borderRadius: '8px',
           padding: '0 12px',
           height: '44px',
+          background: 'transparent',
         }}
       >
         <input

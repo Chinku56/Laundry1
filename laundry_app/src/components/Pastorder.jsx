@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Pastorder.scss';
- 
+
 const dummyOrders = [
   {
     id: 'ORD12345',
@@ -31,11 +31,17 @@ const dummyOrders = [
     paymentMethod: 'Debit Card',
   }
 ];
- 
+
 const Pastorder = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate('/Accountpage');
+  };
+
   return (
     <div className="service-history-page">
-      <Link to="/Accountpage"><button className='Back3'>Back</button></Link>
+      <button className='Back3' onClick={handleBack}>Back</button>
       <h2>🧺 My Laundry Orders</h2>
       <p>Here's a quick look at your recent services.</p>
       <div className="grid">
@@ -54,12 +60,12 @@ const Pastorder = () => {
               <li><strong>Total:</strong> {order.total}</li>
               <li><strong>Payment:</strong> {order.paymentMethod}</li>
             </ul>
-            
+
           </div>
         ))}
       </div>
     </div>
   );
 };
- 
+
 export default Pastorder;

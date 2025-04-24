@@ -7,9 +7,9 @@ const offers = [
   
   
   {
-    title: "SPECIAL OFFER ON DRY CLEANING",
-    discount: "20% OFF",
-    code: "DC20",
+    title: "SPECIAL OFFER ON CLUBULTIMATE",
+    discount: "PAN EXTENDED",
+    code: "ONEMONTH",
     condition: "Offer valid on total order value of above ₹800.",
     validTill: "Offer valid till 30 April 2025.",
     terms: "Valid only on Dry Cleaning items in the order.",
@@ -27,9 +27,9 @@ const offers = [
     bgColor: "#F76C6C"
   },
   {
-    title: "DRY CLEAN + IRON COMBO OFFER",
-    discount: "30% OFF",
-    code: "COMBO30",
+    title: "CLUBULITIMATE GOA COMBO OFFER",
+    discount: "500/- + GOA OFF",
+    code: "GOATRIP500",
     condition: "Minimum order value ₹1000.",
     validTill: "Offer valid till 15 May 2025.",
     terms: "Only for combo orders.",
@@ -38,8 +38,8 @@ const offers = [
   },
   {
     title: "MONTHLY SAVER PACK",
-    discount: "Up to ₹500 OFF",
-    code: "MONTHLY500",
+    discount: "Up to ₹100 OFF",
+    code: "CASHBACK100",
     condition: "Subscribe for monthly services.",
     validTill: "Offer valid till 31 May 2025.",
     terms: "Applicable only for monthly subscription plans.",
@@ -49,7 +49,7 @@ const offers = [
   {
     title: "SUBSCRIPTION BONUS",
     discount: "FREE 1st SERVICE",
-    code: "SUBFREE",
+    code: "N/A",
     condition: "For new subscribers only.",
     validTill: "Offer valid for signups till 30 June 2025.",
     terms: "One-time use only.",

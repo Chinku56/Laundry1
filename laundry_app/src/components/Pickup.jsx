@@ -82,7 +82,7 @@ const Pickup = () => {
       position: 'top-center',
       autoClose: 2000,
       icon: '🧺',
-      onClose: () => navigate('/CartPayment'),
+      onClose: () => navigate('/fancypage'),
     });
 
     if (isExpress) {

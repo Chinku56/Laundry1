@@ -162,7 +162,7 @@ const LoginPage = () => {
         {isLogin && (
           <div className="extra-options" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div className="remember-me">
-              <input
+              <input style={{width:"10%"}}
                 type="checkbox"
                 id="rememberMe"
                 checked={rememberMe}
