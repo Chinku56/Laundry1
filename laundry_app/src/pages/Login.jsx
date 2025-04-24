@@ -306,20 +306,32 @@ const LoginPage = () => {
               onChange={handleChange}
               required
               width="100%"
-              
             />
             <button type="submit" className="submit-btn">
               {isLogin ? 'Login' : 'Create Account'}
             </button>
 
-            {/* Social Login Icons with Redirect */}
+            {/* Or continue with and Forgot Password */}
+            {isLogin && (
+              <div className="continue-and-forgot">
+                <p className="continue-text">Or continue with</p>
+                <a
+                  href="#"
+                  className="forgot-password-link"
+                  onClick={() => showToast("Redirect to password recovery", "info")}
+                >
+                  Forgot Password?
+                </a>
+              </div>
+            )}
+
+            {/* Social Login Icons */}
             <div className="social-login">
-              <p>Or continue with</p>
               <div className="social-icons">
                 <button
                   className="social-btn google"
                   type="button"
-                  onClick={() => window.open("https://accounts.google.com/signin", "blank")}
+                  onClick={() => window.open("https://accounts.google.com/signin", "_blank")}
                 >
                   <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google" />
                 </button>
@@ -333,7 +345,7 @@ const LoginPage = () => {
               </div>
             </div>
 
-            {/* Guest Login Button */}
+            {/* Guest Login */}
             <button
               type="button"
               className="guest-login-btn"
