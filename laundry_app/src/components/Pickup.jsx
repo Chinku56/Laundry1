@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from './NavBar';
 import './Pickup.scss';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { usePickup } from './PickupContext'; 
+import { usePickup } from './PickupContext';
 
 const Pickup = () => {
-  const { setPickupDetails, setSelectedAgent } = usePickup(); 
+  const { setPickupDetails, setSelectedAgent } = usePickup();
   const [pickupDate, setPickupDate] = useState('');
   const [dropoffDate, setDropoffDate] = useState('');
   const [timeSlot, setTimeSlot] = useState('');
@@ -16,6 +16,8 @@ const Pickup = () => {
   const [timeSlots, setTimeSlots] = useState([]);
   const [agents, setAgents] = useState([]);
   const navigate = useNavigate();
+
+  const today = new Date().toISOString().split('T')[0];
 
   useEffect(() => {
     const defaultTimeSlots = [
@@ -29,12 +31,26 @@ const Pickup = () => {
       '8:00 PM – 10:00 PM',
       '10:00 PM – 12:00 AM',
     ];
-
     setTimeSlots(defaultTimeSlots);
 
     const defaultAgents = ['Bharath', 'Priya Sharma', 'Jhansi', 'Pawan Pawar'];
     setAgents(defaultAgents);
   }, []);
+
+  useEffect(() => {
+    if (isExpress && pickupDate) {
+      const nextDay = new Date(pickupDate);
+      nextDay.setDate(nextDay.getDate() + 1);
+      setDropoffDate(nextDay.toISOString().split('T')[0]);
+    }
+  }, [isExpress, pickupDate]);
+
+  const getMaxDropoffDate = () => {
+    if (!pickupDate) return '';
+    const maxDate = new Date(pickupDate);
+    maxDate.setDate(maxDate.getDate() + 7);
+    return maxDate.toISOString().split('T')[0];
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,15 +71,18 @@ const Pickup = () => {
       agent,
     };
 
-    // Update the context values
+    // Save to context
     setSelectedAgent(agent);
     setPickupDetails(details);
+
+    // Save to session storage
+    sessionStorage.setItem('pickupDetails', JSON.stringify(details));
 
     toast.success('Pickup Scheduled Successfully!', {
       position: 'top-center',
       autoClose: 2000,
       icon: '🧺',
-      onClose: () => navigate('/OrderTracking'),
+      onClose: () => navigate('/CartPayment'),
     });
 
     if (isExpress) {
@@ -74,8 +93,6 @@ const Pickup = () => {
       });
     }
   };
-
-  const today = new Date().toISOString().split('T')[0];
 
   return (
     <div>
@@ -105,6 +122,8 @@ const Pickup = () => {
                   type="date"
                   value={dropoffDate}
                   min={pickupDate ? new Date(new Date(pickupDate).getTime() + 86400000).toISOString().split('T')[0] : today}
+                  max={getMaxDropoffDate()}
+                  disabled={isExpress}
                   onChange={(e) => setDropoffDate(e.target.value)}
                 />
               </div>
@@ -151,8 +170,10 @@ const Pickup = () => {
                 <span>Enable Express Delivery</span>
               </div>
             </div>
-            
-            <Link to="/CartPayment"><button className="schedule-btn">Proceed To Pay</button></Link>
+
+            <button className="schedule-btn" type="submit">
+              Proceed To Pay
+            </button>
           </form>
         </div>
       </div>
