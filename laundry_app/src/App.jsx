@@ -31,6 +31,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import CartPayment from "./components/Cartpayment";
 import { PickupProvider } from "./components/PickupContext";
 import Pastorder from "./components/Pastorder";
+// import ForgotPassword from "./pages/Forgotpassword";
+
+
 
 import FancyPage from "./components/Fancypayment";
 
@@ -221,7 +224,11 @@ function App() {
 
           {/* Catch-all route */}
           <Route path="**" element={<div>404 - Page Not Found</div>} />
+          {/* <Route path="/Forgot" element={ForgotPassword} */}
+          
+
         </Routes>
+        
       </div>
     </CartProvider>
     </PickupProvider>
