@@ -1,15 +1,10 @@
-
 import React, { createContext, useState, useContext } from 'react';
 
 const PickupContext = createContext();
 
-
-export const usePickup = () => {
-  return useContext(PickupContext);
-};
+export const usePickup = () => useContext(PickupContext);
 
 export const PickupProvider = ({ children }) => {
-
   const [pickupDetails, setPickupDetails] = useState({
     pickupDate: '2025-04-23',
     dropoffDate: '2025-04-24',
@@ -20,7 +15,14 @@ export const PickupProvider = ({ children }) => {
   const [selectedAgent, setSelectedAgent] = useState('Bharath');
 
   return (
-    <PickupContext.Provider value={{ pickupDetails, selectedAgent }}>
+    <PickupContext.Provider
+      value={{
+        pickupDetails,
+        setPickupDetails,
+        selectedAgent,
+        setSelectedAgent,
+      }}
+    >
       {children}
     </PickupContext.Provider>
   );
