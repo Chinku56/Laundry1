@@ -8,7 +8,7 @@ import Loader from '../components/Loader';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true); // Set true to show loader initially
+  const [loading, setLoading] = useState(true);
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
@@ -19,8 +19,7 @@ const LoginPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Loader visible for 2 seconds
-
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -121,7 +120,7 @@ const LoginPage = () => {
                     onChange={handleChange}
                     required
                     minLength={2}
-                    width="94%"
+                    width="100%"
                   />
                 )}
                 <InputField
@@ -132,7 +131,7 @@ const LoginPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  width="94%"
+                  width="100%"
                 />
                 <InputField
                   label="Password"
@@ -142,14 +141,13 @@ const LoginPage = () => {
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  width="94%"
+                  width="100%"
                 />
 
                 <button type="submit" className="submit-btn">
                   {isLogin ? 'Login' : 'Create Account'}
                 </button>
 
-                {/* Social Login */}
                 <div className="social-login">
                   <p>Or continue with</p>
                   <div className="social-icons">
@@ -170,7 +168,6 @@ const LoginPage = () => {
                   </div>
                 </div>
 
-                {/* Guest Login */}
                 <button
                   type="button"
                   className="guest-login-btn"
