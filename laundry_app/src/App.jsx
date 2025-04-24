@@ -45,6 +45,9 @@ function App() {
           <Route path="/" element={<Landingpage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/*" element={<Navigate to="/Pickup" replace />} />
+          <Route path="/pickup" element={<Pickup />} />
+          
+
 
           <Route
             path="/home"
