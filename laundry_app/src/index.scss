@@ -1,18 +1,37 @@
-@import './components/PromotionalBanners/PromotionalBanners.scss';
+// @import './components/PromotionalBanners/PromotionalBanners.scss';
 
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s;
+  -webkit-text-fill-color: black !important;
+  caret-color: black;
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+}
+
 // * {
 //   margin: 0;
 //   padding: 0;

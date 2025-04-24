@@ -1,11 +1,13 @@
 .chinna{
-  background-color:#fbd000;;
+  background-color:#fbd000;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
 .payment-page {
     max-width: 400px;
     margin: 0px auto;
     padding: 10px;
-    background: #ffffff;
+    background: #fbd000;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   
@@ -55,6 +57,7 @@
         font-size: 14px;
         border: 1px solid #ccc;
         border-radius: 8px;
+        font-family: "Montserrat", sans-serif;
       }
   
       .row {
@@ -125,6 +128,7 @@
         font-size: 16px;
         display: flex;
         align-items: center;
+        font-family: "Montserrat", sans-serif;
   
         .currency {
           font-size: 18px;
@@ -282,4 +286,5 @@
       }
     }
   }
-  
+
+

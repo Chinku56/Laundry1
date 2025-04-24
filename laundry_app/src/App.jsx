@@ -45,9 +45,9 @@ function App() {
     <CartProvider>
       <div className="App">
         <Routes>
-          {/* <Route path="/" element={<Landingpage />} />
+          <Route path="/" element={<Landingpage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/*" element={<Navigate to="/Pickup" replace />} /> */}
+          <Route path="/*" element={<Navigate to="/Pickup" replace />} />
 
           <Route
             path="/home"
@@ -90,14 +90,14 @@ function App() {
               // </ProtectedRoute>
             }
           />
-           <Route
+           {/* <Route
             path="/Cartpayment"
             element={
               // <ProtectedRoute>
                 <CartPayment/>
               // </ProtectedRoute>
             }
-          />
+          /> */}
           <Route
             path="/washfoldprices"
             element={
@@ -178,14 +178,14 @@ function App() {
               // </ProtectedRoute>
             }
           />
-          {/* <Route
+          <Route
             path="/Pickup"
             element={
               // <ProtectedRoute>
                 <Pickup />
               // </ProtectedRoute>
             }
-          /> */}
+          />
           <Route
             path="/Order-tracking"
             element={

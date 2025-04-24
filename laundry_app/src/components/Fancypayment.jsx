@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./Fancypayment.scss";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const FancyPage = () => {
+    const navigate=useNavigate()
   const [method, setMethod] = useState("card");
   const [card, setCard] = useState("");
   const [cardType, setCardType] = useState("credit");
@@ -55,7 +57,10 @@ const FancyPage = () => {
   
     if (paymentInProgress) {
       toast.info("Your payment was already done!");
+      navigate("/Order-tracking")
       return; 
+     
+
     }
 
     setPaymentInProgress(true); 
@@ -83,7 +88,8 @@ const FancyPage = () => {
 
   
   const handleGoToOrders = () => {
-    window.location.href = "/orders"; 
+    navigate("/Order-tracking")
+    
   };
 
   return (
