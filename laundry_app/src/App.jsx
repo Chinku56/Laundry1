@@ -45,14 +45,11 @@ function App() {
           <Route path="/" element={<Landingpage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/*" element={<Navigate to="/Pickup" replace />} />
-          <Route path="/pickup" element={<Pickup />} />
-          
-
 
           <Route
             path="/home"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <>
                   <Navbar />
                   <Slider />
@@ -61,153 +58,153 @@ function App() {
                   <Services />
                   <Footer />
                 </>
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
 
           <Route
             path="/Navbar"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Navbar />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/slider"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Slider />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
          
           <Route
             path="/Cart"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Cart />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
            <Route
             path="/Cartpayment"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <CartPayment/>
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/washfoldprices"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <WashFoldPrices />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/washiron"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <WashIron />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/steamiron"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <SteamIron />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/dryclean"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <DryClean />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Offers"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Offers />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Subscriptions"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Subscriptions />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Servicehours"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Servicehours />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Accountpage"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Accountpage />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Promotional"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Promotional />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/payment"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <PaymentPage />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Pickup"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Pickup />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Order-tracking"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <OrderTracking />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/slider"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Slider />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route
             path="/Pastorder"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <Pastorder />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
 
