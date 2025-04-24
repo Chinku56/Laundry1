@@ -1,12 +1,12 @@
 .splash-container {
   width: 100%;
   height: 100vh;
-  background-color: #ffeb3b; 
+  background-color: #ffeb3b;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0%;
+  padding: 0;
   font-family: "Montserrat", sans-serif;
 
   .logo-wrapper {
@@ -15,21 +15,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 1.5vh; 
+    gap: 1.5vh;
   }
+
   .tagline {
     font-size: 8vw;
     font-weight: 500;
     color: #1a237e;
     margin-top: 0.5vh;
-    
     text-align: center;
-  
+
     @media (min-width: 768px) {
       font-size: 1.5vw;
     }
   }
-  
 
   .logo {
     font-size: 20vw;
@@ -40,20 +39,40 @@
     font-size: 8vw;
     font-weight: bold;
     color: #0d47a1;
-    margin: 0; 
+    margin: 0;
+  }
+
+  .quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .quote {
+    font-size: 3vw;
+    font-weight: 500;
+    color: #0d47a1;
+    text-align: center;
+    animation: fadeInOut 4s ease-in-out infinite;
+
+    @media (min-width: 768px) {
+      font-size: 1.5vw;
+    }
   }
 
   .tagname {
     padding: 1% 10%;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 110%;
     color: #f6f7f8;
-    font-weight: 500;
+    border: none;
     text-align: center;
     background-color: blue;
     cursor: pointer;
     transition: background 0.3s;
     text-decoration: none;
+    width: 30%;
 
     &:hover {
       background-color: green;
@@ -66,6 +85,80 @@
     }
     100% {
       transform: scale(1.1);
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  /* Sparkle Animation */
+  .celebration-container {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .emoji {
+    font-size: 6vw;
+    animation: emojiPop 2s ease-in-out infinite;
+  }
+
+  @keyframes emojiPop {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  .sparkles {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    pointer-events: none;
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkleEffect 1.5s ease-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+
+    @keyframes sparkleEffect {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1) translateY(-50px);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0) translateY(50px);
+      }
     }
   }
 
@@ -83,3 +176,4 @@
     }
   }
 }
+

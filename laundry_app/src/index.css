@@ -1,12 +1,24 @@
 /* src/index.css */
-
 body {
   font-family: "Montserrat", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-  }
+  margin: 0;
+  padding: 0;
+  background-color: #ffeb3b;
+  box-sizing: border-box;
+  overflow-x: hidden;         /* Prevent horizontal scroll */
+  width: 100%;   
+  font-family: "Montserrat", sans-serif;             /* Ensure full width without overflow */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
   
   /* Add any global styles you want */
   

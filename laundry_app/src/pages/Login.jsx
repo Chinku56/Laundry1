@@ -50,7 +50,7 @@ const LoginPage = () => {
     }
 
     if (isLogin) {
-      if (email.toLowerCase() !== 'chinna123@gmail.com' || password !== '123456787') {
+      if (email.toLowerCase() !== 'admin@gmail.com' || password !== 'Password@5') {
         showToast("Incorrect email or password", "error");
         return;
       }

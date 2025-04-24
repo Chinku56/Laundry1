@@ -32,6 +32,9 @@ import CartPayment from "./components/Cartpayment";
 import { PickupProvider } from "./components/PickupContext";
 import Pastorder from "./components/Pastorder";
 
+import FancyPage from "./components/Fancypayment";
+
+
 
 
 
@@ -42,9 +45,9 @@ function App() {
     <CartProvider>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Landingpage />} />
+          {/* <Route path="/" element={<Landingpage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/*" element={<Navigate to="/Pickup" replace />} />
+          <Route path="/*" element={<Navigate to="/Pickup" replace />} /> */}
 
           <Route
             path="/home"
@@ -175,14 +178,14 @@ function App() {
               // </ProtectedRoute>
             }
           />
-          <Route
+          {/* <Route
             path="/Pickup"
             element={
               // <ProtectedRoute>
                 <Pickup />
               // </ProtectedRoute>
             }
-          />
+          /> */}
           <Route
             path="/Order-tracking"
             element={
@@ -196,6 +199,14 @@ function App() {
             element={
               // <ProtectedRoute>
                 <Slider />
+              // </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/fancypage"
+            element={
+              // <ProtectedRoute>
+                <FancyPage/>
               // </ProtectedRoute>
             }
           />
