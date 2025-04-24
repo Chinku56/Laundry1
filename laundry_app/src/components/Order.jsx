@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { usePickup } from './PickupContext'; 
+
+
+import React, { useEffect, useState, useContext } from 'react';
+import { usePickup } from './PickupContext';
 import './Orderstatus.scss';
-import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';  
-import 'react-toastify/dist/ReactToastify.css';  
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { CartContext } from "../components/CartContext";
+
 const steps = [
   { label: 'Order Placed', icon: '📝' },
   { label: 'Picked Up', icon: '📦' },
@@ -13,9 +17,11 @@ const steps = [
 ];
 
 const OrderTracking = () => {
-  const { pickupDetails, selectedAgent } = usePickup(); 
+  const { pickupDetails, selectedAgent } = usePickup();
   const [currentStep, setCurrentStep] = useState(0);
-  const [showIcon, setShowIcon] = useState(false);  
+  const [showIcon, setShowIcon] = useState(false);
+  const navigate = useNavigate();
+  const { clearCart } = useContext(CartContext);
 
   useEffect(() => {
     // Simulate the order steps progression
@@ -34,19 +40,24 @@ const OrderTracking = () => {
 
   const showToast = () => {
     toast.success('Your laundry order has been completed. Thank you!');
-    setShowIcon(true); 
-    setTimeout(() => setShowIcon(false), 3000);  
+    setShowIcon(true);
+    setTimeout(() => setShowIcon(false), 3000);
   };
 
   useEffect(() => {
     if (currentStep === steps.length - 1) {
-      showToast();  
+      showToast();
     }
   }, [currentStep]);
 
+  const handleBack = () => {
+    clearCart();
+    navigate('/home');
+  };
+
   return (
     <div className="order-tracking" style={{ minHeight: '100vh', padding: '20px' }}>
-      <Link to="/home"><button className='Back'>Back To Home</button></Link>
+      <button className='Back' onClick={handleBack}>Back To Home</button>
       <h2 style={{ textAlign: 'center', color: '#303f9f', marginTop: '95px' }}>Order Tracking</h2>
 
       {pickupDetails ? (
@@ -130,14 +141,14 @@ const OrderTracking = () => {
         </div>
       </div>
 
-     
+
       {showIcon && (
         <div className="celebration-icon" style={styles.icon}>
           🎉
         </div>
       )}
 
-     
+
       <ToastContainer />
     </div>
   );
@@ -149,10 +160,11 @@ const styles = {
     top: '10px',
     left: '50%',
     transform: 'translateX(-50%)',
-    fontSize: '80px',  
+    fontSize: '80px',
     animation: 'bounce 1s infinite',
     zIndex: 1000,
   }
 };
 
 export default OrderTracking;
+

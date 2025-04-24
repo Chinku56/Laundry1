@@ -54,8 +54,7 @@ const Footer = () => {
           <div className="footer__social-icons">
             <SocialIcon url="https://www.facebook.com/WashOMatic" target="_blank" />
             <SocialIcon url="https://twitter.com/WashOMatic" target="_blank" />
-            <SocialIcon url="https://www.instagram.com/WashOMatic" target="_blank" />
-            <SocialIcon url="https://www.google.com/search?q=WashOMatic" target="_blank" />
+            <SocialIcon url="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1" target="_blank" />
           </div>
         </div>
       </div>

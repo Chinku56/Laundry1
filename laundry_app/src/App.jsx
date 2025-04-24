@@ -32,6 +32,9 @@ import CartPayment from "./components/Cartpayment";
 import { PickupProvider } from "./components/PickupContext";
 import Pastorder from "./components/Pastorder";
 
+import FancyPage from "./components/Fancypayment";
+
+
 
 
 
@@ -87,14 +90,14 @@ function App() {
               // </ProtectedRoute>
             }
           />
-           <Route
+           {/* <Route
             path="/Cartpayment"
             element={
               // <ProtectedRoute>
                 <CartPayment/>
               // </ProtectedRoute>
             }
-          />
+          /> */}
           <Route
             path="/washfoldprices"
             element={
@@ -196,6 +199,14 @@ function App() {
             element={
               // <ProtectedRoute>
                 <Slider />
+              // </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/fancypage"
+            element={
+              // <ProtectedRoute>
+                <FancyPage/>
               // </ProtectedRoute>
             }
           />

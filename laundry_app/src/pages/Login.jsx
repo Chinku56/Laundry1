@@ -59,7 +59,7 @@ const LoginPage = () => {
     }
 
     if (isLogin) {
-      if (email.toLowerCase() !== 'chinna123@gmail.com' || password !== '123456787') {
+      if (email.toLowerCase() !== 'admin@gmail.com' || password !== 'Password@5') {
         showToast("Incorrect email or password", "error");
         return;
       }
@@ -164,6 +164,13 @@ const LoginPage = () => {
                       onClick={() => window.open("https://www.facebook.com/login", "_blank")}
                     >
                       <img src="https://img.icons8.com/fluency/48/000000/facebook-new.png" alt="Facebook" />
+                    </button>
+                    <button
+                      className="social-btn twitter"
+                      type="button"
+                      onClick={() => window.open("https://twitter.com/login", "_blank")}
+                    >
+                      <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter" />
                     </button>
                   </div>
                 </div>

@@ -62,7 +62,7 @@ const Subscriptions = () => {
             <button
               className="buy-button"
               onClick={() => handleBuyNow(plan.duration)}
-            >
+            > 
               {plan.buttonText}
             </button>
           </div>
