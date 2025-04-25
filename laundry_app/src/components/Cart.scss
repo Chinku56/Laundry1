@@ -95,7 +95,6 @@
   background-color: #d43939;
 }
 
-
 .item-name {
   flex: 2;
 
@@ -174,19 +173,17 @@
       font-size: 1rem;
     }
   }
-  
-  
 
   .pay-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  transition: background-color 0.3s;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
 
     @media (max-width: 768px) {
       font-size: 90%;
@@ -197,5 +194,8 @@
       font-size: 80%;
       padding: 1% 2%;
     }
+  }
+  .pay-btn:hover {
+    background-color: #007bff;
   }
 }

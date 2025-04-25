@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import './ForgotPassword.scss';
+import React, { useState } from "react";
+import "./ForgotPassword.scss";
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.trim()) {
       setSubmitted(true);
-      // Simulate sending email or integrate API here
     }
   };
 
@@ -32,11 +31,14 @@ const ForgotPassword = () => {
           </form>
         ) : (
           <p className="success-message">
-            If your email exists in our system, you’ll receive a reset link shortly.
+            If your email exists in our system, you’ll receive a reset link
+            shortly.
           </p>
         )}
 
-        <a href="/login" className="back-link">← Back to Login</a>
+        <a href="/login" className="back-link">
+          ← Back to Login
+        </a>
       </div>
     </div>
   );

@@ -1,147 +1,140 @@
 .service-history-page {
-    min-height: 100vh;
-    padding: 2rem;
-    background: #ffcc00;
-  
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #1e40af;
-      text-align: center;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #ffcc00;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e40af;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    text-align: center;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .order-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dbeafe;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: start;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
     }
-  
-    p {
-      text-align: center;
-      color: #4b5563;
-      margin-bottom: 2rem;
-      font-size: 1.125rem;
-    }
-  
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Automatically adjust for different screen sizes
-    }
-  
-    .order-card {
-      background-color: white;
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-      border: 1px solid #dbeafe;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: start;
-  
-      &:hover {
-        transform: scale(1.02);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
-      }
-  
-      h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #1f2937;
-  
-        span {
-          color: #2563eb;
-        }
-      }
-  
-      .status {
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: white;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  
-        &.delivered {
-          background-color: #10b981;
-        }
-        &.out-for-delivery {
-          background-color: #facc15;
-        }
-        &.pending {
-          background-color: #9ca3af;
-        }
-      }
-  
-      ul {
-        margin-top: 0.75rem;
-        color: #374151;
-        font-size: 0.875rem;
-  
-        li {
-          margin-bottom: 0.25rem;
-  
-          strong {
-            color: #111827;
-          }
-        }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1f2937;
+
+      span {
+        color: #2563eb;
       }
     }
-  
-    .Back3 {
-      background-color: #424646;
+
+    .status {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
       color: white;
-      width: 150px;
-      height: 2.5rem;
-      border-radius: 10px;
-      margin: 20px auto;
-      display: block;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      margin-left: 80%;
-      text-decoration: none;
-    }
-  
-    .Back3:hover {
-      background-color: #0071bc;
-      transform: scale(1.1);
-      text-decoration: none;
-    }
-  
-    // ** Responsiveness for different screen sizes **
-    
-    // For tablets and below (max-width: 768px)
-    @media (max-width: 768px) {
-      padding: 1rem; // Reduce padding for smaller screens
-  
-      h2 {
-        font-size: 2rem; // Slightly smaller heading for smaller screens
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      &.delivered {
+        background-color: #10b981;
       }
-  
-      p {
-        font-size: 1rem; // Adjust paragraph font size
+      &.out-for-delivery {
+        background-color: #facc15;
       }
-  
-      .grid {
-        grid-template-columns: 1fr; // Stack items vertically on smaller screens
-      }
-  
-      .Back3 {
-        margin-left: auto;  // Center the button
-        margin-right: auto;
-        width: 100%; // Make button take full width on small screens
+      &.pending {
+        background-color: #9ca3af;
       }
     }
-  
-    // For mobile screens (max-width: 480px)
-    @media (max-width: 480px) {
-      h2 {
-        font-size: 1.75rem; // Further reduce heading size
-      }
-  
-      .order-card {
-        padding: 1rem; // Reduce padding in cards
-      }
-  
-      .Back3 {
-        width: 100%;  // Make button full width for very small screens
+
+    ul {
+      margin-top: 0.75rem;
+      color: #374151;
+      font-size: 0.875rem;
+
+      li {
+        margin-bottom: 0.25rem;
+
+        strong {
+          color: #111827;
+        }
       }
     }
   }
-  
+
+  .Back3 {
+    background-color: #424646;
+    color: white;
+    width: 150px;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 80%;
+    text-decoration: none;
+  }
+
+  .Back3:hover {
+    background-color: #0071bc;
+    transform: scale(1.1);
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .Back3 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    .order-card {
+      padding: 1rem;
+    }
+
+    .Back3 {
+      width: 100%;
+    }
+  }
+}
