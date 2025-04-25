@@ -72,7 +72,7 @@ const FancyPage = () => {
       formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
     }
 
-    // Validate MM part (only allow 01-12)
+    
     const mm = parseInt(formatted.slice(0, 2), 10);
     if (formatted.length >= 2 && (mm < 1 || mm > 12)) {
       toast.error("Invalid month. Use MM/YY format (e.g., 04/26).");
