@@ -1,12 +1,11 @@
-/* Main container */
 .login-container {
   display: flex;
   height: 100vh;
   font-family: sans-serif;
   flex-direction: row;
-}
+  background: #ffcc00;
 
-/* Image section */
+}
 .image-section {
   flex: 1;
   position: relative;
@@ -27,8 +26,6 @@
   color: white;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-/* Form section */
 .form-section {
   flex: 1;
   padding: 40px;
@@ -42,8 +39,6 @@
   width: 100%;
   max-width: 400px;
 }
-
-/* Toggle buttons */
 .toggle-buttons {
   display: flex;
   margin-bottom: 20px;
@@ -74,8 +69,6 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
-
-/* Submit button */
 .submit-btn {
   padding: 10px;
   background-color: blue;
@@ -86,8 +79,6 @@
   cursor: pointer;
   width: 100%;
 }
-
-/* Forgot Password and checkbox */
 .forgot-password-section {
   display: flex;
   align-items: center;
@@ -104,17 +95,15 @@
 .forgot-password-label input {
   margin-right: 6px;
 }
-
-/* Continue with and Forgot Password section */
 .continue-and-forgot {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
+  align-items: center;
   justify-content: center;
   margin-top: 16px;
   font-size: 14px;
   gap: 6px;
-  text-align: center; /* Ensure text is centered */
+  text-align: center;
 }
 
 .continue-and-forgot a {
@@ -128,8 +117,6 @@
   color: #555;
   font-weight: 500;
 }
-
-/* Social login section */
 .social-login {
   text-align: center;
   margin-top: 20px;
@@ -159,8 +146,6 @@
   width: 36px;
   height: 36px;
 }
-
-/* Guest login button */
 .guest-login-btn {
   display: block;
   width: 100%;
@@ -179,7 +164,6 @@
   background-color: #e0e0e0;
 }
 
-/* Media query for responsiveness */
 @media screen and (max-width: 768px) {
   .login-container {
     flex-direction: column;

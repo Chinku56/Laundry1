@@ -6,9 +6,11 @@
 
   .order-details {
     margin-top: 30px;
+
     p {
       margin: 5px 0;
       font-size: 1rem;
+      color: black;
     }
   }
 
@@ -107,71 +109,88 @@
     background-color: #0071bc;
     transform: scale(1.1);
   }
+
   @keyframes bounce {
     0% {
       transform: translateX(-50%) translateY(0);
     }
     50% {
-      transform: translateX(-50%) translateY(-30px);  
+      transform: translateX(-50%) translateY(-30px);
     }
     100% {
       transform: translateX(-50%) translateY(0);
     }
   }
-  
+
   .celebration-icon {
     position: fixed;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 80px;  
+    font-size: 80px;
     animation: bounce 1s infinite;
     z-index: 1000;
   }
-  
 
-  // Responsive styles
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     .timeline {
-      flex-direction: row;
-      overflow-x: auto;
-      max-width: 100%;
-      padding: 0 10px;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      gap: 30px;
     }
 
     .timeline-step {
-      min-width: 80px;
-
-      .step-label {
-        font-size: 0.8rem;
-      }
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0;
+      width: auto;
 
       .step-icon {
         width: 35px;
         height: 35px;
         font-size: 1rem;
+        margin-bottom: 5px;
+        z-index: 1;
+      }
+
+      .step-label {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      .line {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 100%;
+        background-color: #ccc;
+        z-index: 0;
+      }
+
+      &:last-child .line {
+        display: none;
+      }
+
+      &.completed .line {
+        background-color: #28a745;
       }
     }
 
     .Back {
-      width: 80%;
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .timeline-step .step-label {
-      font-size: 0.75rem;
-    }
-
-    .step-icon {
-      width: 30px;
-      height: 30px;
-      font-size: 0.9rem;
-    }
-
-    .Back {
       width: 90%;
+      font-size: 0.85rem;
+      margin: 20px auto 0;
+    }
+
+    .celebration-icon {
+      font-size: 60px;
     }
   }
 }

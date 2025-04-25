@@ -1,290 +1,285 @@
-.chinna{
-  background-color:#fbd000;
-  height: 100vh;
+.chinna {
+  background-color: #fbd000;
+  height: 200vh;
   font-family: "Montserrat", sans-serif;
+
 }
 .payment-page {
-    max-width: 400px;
-    margin: 0px auto;
-    padding: 10px;
-    background: #fbd000;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
-    h2 {
+  max-width: 400px;
+  margin: 0px auto;
+  padding: 10px;
+  background: #fbd000;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .payment-methods {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    div {
+      flex: 1;
       text-align: center;
-      color: #444;
-      margin-bottom: 20px;
-    }
-  
-    .payment-methods {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-  
-      div {
-        flex: 1;
-        text-align: center;
-        padding: 10px;
-        cursor: pointer;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        margin: 0 5px;
-        transition: all 0.3s ease;
-        font-size: 14px;
-  
-        svg {
-          margin-bottom: 5px;
-          display: block;
-          font-size: 20px;
-        }
-  
-        &.active {
-          background-color: #4a60ff;
-          color: #fff;
-          border-color: #4a60ff;
-        }
-      }
-    }
-  
-    .payment-form {
-      display: flex;
-      flex-direction: column;
-  
-      input {
-        margin-bottom: 15px;
-        padding: 10px;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-family: "Montserrat", sans-serif;
-      }
-  
-      .row {
-        display: flex;
-        gap: 10px;
-  
-        input {
-          flex: 1;
-        }
-      }
-  
-      button {
-        background: #4a60ff;
-        color: white;
-        padding: 12px;
-        border: none;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background 0.3s;
-  
-        &:hover {
-          background: #3245cc;
-        }
-      }
-    }
-  
-    .voucher-section {
-      margin: 20px 0;
-      display: flex;
-      justify-content: space-between;
-    
-      input {
-        padding: 8px;
-        width: 60%;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-    
-      button {
-        padding: 8px 12px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-left: 10px;
-  
-        &:hover {
-          background-color: #45a049;
-        }
-  
-        &.remove {
-          background-color: #f44336;
-  
-          &:hover {
-            background-color: #e53935;
-          }
-        }
-      }
-    }
-  
-    .final-price {
-      margin-top: 20px;
-  
-      p {
-        margin-bottom: 10px;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        font-family: "Montserrat", sans-serif;
-  
-        .currency {
-          font-size: 18px;
-          font-weight: bold;
-          color: red; 
-          margin-right: 7px; 
-        }
-  
-        .price {
-          color: red;  
-          font-weight: bold;
-          font-size: 28px;
-        }
-      }
-    }
-  
-    .voucher-box {
-      margin-top: 20px;
       padding: 10px;
-      background-color: #d4edda;
-      border-radius: 5px;
-      color: #155724;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+
+      svg {
+        margin-bottom: 5px;
+        display: block;
+        font-size: 20px;
+      }
+
+      &.active {
+        background-color: #4a60ff;
+        color: #fff;
+        border-color: #4a60ff;
+      }
+    }
+  }
+
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+
+      input {
+        flex: 1;
+      }
+    }
+
+    button {
+      background: #4a60ff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
       font-weight: bold;
-    }
-    .celebration-emoji {
-      font-size: 6rem;
-      text-align: center;
-      animation: popAndFade 2s ease-in-out;
-      margin: 1rem auto;
-      color: #ff4081;
-    }
-    
-    @keyframes popAndFade {
-      0% {
-        transform: scale(0.2);
-        opacity: 0;
-        margin-top: -2rem;
-      }
-      50% {
-        transform: scale(1.4);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 0;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #3245cc;
       }
     }
-    
-    /* Media Queries for responsiveness */
-    
-    @media (max-width: 768px) {
-      .payment-page {
-        max-width: 100%;
-        padding: 15px;
-      }
-  
-      .payment-methods {
-        flex-direction: column;
-        div {
-          margin: 10px 0;
-        }
-      }
-  
-      .payment-form {
-        input {
-          font-size: 14px;
-          padding: 8px;
-        }
-  
-        .row {
-          flex-direction: column;
-          gap: 10px;
-        }
-  
-        button {
-          padding: 10px;
-        }
-      }
-  
-      .voucher-section {
-        flex-direction: column;
-        align-items: flex-start;
-  
-        input {
-          width: 100%;
-        }
-  
-        button {
-          width: 100%;
-          margin-top: 10px;
-        }
-      }
-  
-      .final-price {
-        p {
-          font-size: 14px;
-        }
-  
-        .price {
-          font-size: 16px;
-        }
-  
-        .currency {
-          font-size: 16px;
-        }
-      }
+  }
+
+  .voucher-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      padding: 8px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-  
-    /* Mobile-first responsive tweaks for smaller screens */
-    @media (max-width: 480px) {
-      .payment-page {
-        padding: 10px;
+
+    button {
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+
+      &:hover {
+        background-color: #45a049;
       }
-  
-      .payment-methods {
-        div {
-          font-size: 12px;
-          padding: 8px;
-        }
-      }
-  
-      .payment-form {
-        input {
-          font-size: 12px;
-          padding: 6px;
-        }
-  
-        button {
-          padding: 10px;
-        }
-      }
-  
-      .voucher-section {
-        input {
-          padding: 6px;
-        }
-  
-        button {
-          padding: 6px 10px;
-        }
-      }
-  
-      .final-price {
-        p {
-          font-size: 14px;
-        }
-  
-        .price {
-          font-size: 16px;
-        }
-  
-        .currency {
-          font-size: 16px;
+
+      &.remove {
+        background-color: #f44336;
+
+        &:hover {
+          background-color: #e53935;
         }
       }
     }
   }
 
+  .final-price {
+    margin-top: 20px;
 
+    p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      font-family: "Montserrat", sans-serif;
+
+      .currency {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        margin-right: 7px;
+      }
+
+      .price {
+        color: red;
+        font-weight: bold;
+        font-size: 28px;
+      }
+    }
+  }
+
+  .voucher-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    border-radius: 5px;
+    color: #155724;
+    font-weight: bold;
+  }
+  .celebration-emoji {
+    font-size: 6rem;
+    text-align: center;
+    animation: popAndFade 2s ease-in-out;
+    margin: 1rem auto;
+    color: #ff4081;
+  }
+
+  @keyframes popAndFade {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+      margin-top: -2rem;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .payment-page {
+      max-width: 100%;
+      padding: 15px;
+    }
+
+    .payment-methods {
+      flex-direction: column;
+      div {
+        margin: 10px 0;
+      }
+    }
+
+    .payment-form {
+      input {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px;
+      }
+    }
+
+    .voucher-section {
+      flex-direction: column;
+      align-items: flex-start;
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    .final-price {
+      p {
+        font-size: 14px;
+      }
+
+      .price {
+        font-size: 16px;
+      }
+
+      .currency {
+        font-size: 16px;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .payment-page {
+      padding: 10px;
+    }
+
+    .payment-methods {
+      div {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+
+    .payment-form {
+      input {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      button {
+        padding: 10px;
+      }
+    }
+
+    .voucher-section {
+      input {
+        padding: 6px;
+      }
+
+      button {
+        padding: 6px 10px;
+      }
+    }
+
+    .final-price {
+      p {
+        font-size: 14px;
+      }
+
+      .price {
+        font-size: 16px;
+      }
+
+      .currency {
+        font-size: 16px;
+      }
+    }
+  }
+}

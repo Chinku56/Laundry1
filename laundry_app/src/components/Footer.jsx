@@ -17,19 +17,19 @@ const Footer = () => {
         <div className="footer__links">
           <div className="footer__column">
             <h4>PAGES</h4>
-            <a href="/about">Our Services</a>
-            <a href="/services">Club Ultimate</a>
-            <a href="/membership">Service Hours</a>
-            <a href="/careers">Pickup Scheduler</a>
+            <a href="/home">Home</a>
+            <a href="/Subscriptions">Club Ultimate</a>
+            <a href="/Servicehours">Service Hours</a>
+            <a href="/pickuppage">Pickup Scheduler</a>
            
             
           </div>
           <div className="footer__column">
             <h4 className="footer__hidden-heading">Services</h4>
-            <a href="/news">Wash And Fold</a>
-            <a href="/sustainability">Wash And Iron</a>
-            <a href="/terms">Steam Iron</a>
-            <a href="/faq">Dry Clean</a>
+            <a href="/washfoldprices">Wash And Fold</a>
+            <a href="/washiron">Wash And Iron</a>
+            <a href="/steamiron">Steam Iron</a>
+            <a href="/dryclean">Dry Clean</a>
             <a href="/contact">Contact Us</a>
             
           </div>

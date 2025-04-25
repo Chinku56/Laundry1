@@ -1,8 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./WashIron.scss";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../components/CartContext";
 import Navbar from "./NavBar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loader from "../components/Loader";
 
 const tabs = ["Men", "Women", "Kids", "House Hold"];
 
@@ -44,9 +47,18 @@ const data = {
 
 const WashIron = () => {
   const [activeTab, setActiveTab] = useState("Men");
+  const [loading, setLoading] = useState(true);
   const { cartItems, addToCart, removeFromCart, total } =
     useContext(CartContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const getItemCount = (item) => {
     return cartItems.filter((i) => i.name === item.name).length;
@@ -54,63 +66,69 @@ const WashIron = () => {
 
   return (
     <div>
-      <Navbar/>
-    
-    <div className="washiron-container">
-      <h2 className="title">Wash & Iron Prices</h2>
-      <p className="subtitle">
-        Perfectly pressed, wrinkle-free clothes right to your doorstep. Get the
-        magic of pro ironing.
-      </p>
+      <ToastContainer />
+      {loading ? (
+        <Loader text="Laundry is the real Neverending Story..." />
+      ) : (
+        <>
+          <Navbar />
+          <div className="washiron-container">
+            <h2 className="title">Wash & Iron Prices</h2>
+            <p className="subtitle">
+              Perfectly pressed, wrinkle-free clothes right to your doorstep.
+              Get the magic of pro ironing.
+            </p>
 
-      <div className="tabs">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className={`tab ${tab === activeTab ? "active" : ""}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className="price-list">
-        {data[activeTab].map((item, index) => {
-          const count = getItemCount(item);
-          return (
-            <div key={index} className="price-item">
-              <div className="icon">{item.icon}</div>
-              <div className="details">
-                <p>{item.name}</p>
-                <span>₹{item.price}</span>
-              </div>
-              <div className="controls">
+            <div className="tabs">
+              {tabs.map((tab) => (
                 <button
-                  onClick={() => removeFromCart(item)}
-                  disabled={count === 0}
+                  key={tab}
+                  className={`tab ${tab === activeTab ? "active" : ""}`}
+                  onClick={() => setActiveTab(tab)}
                 >
-                  -
+                  {tab}
                 </button>
-                <span>{count}</span>
-                <button onClick={() => addToCart(item)}>+</button>
+              ))}
+            </div>
+
+            <div className="price-list">
+              {data[activeTab].map((item, index) => {
+                const count = getItemCount(item);
+                return (
+                  <div key={index} className="price-item">
+                    <div className="icon">{item.icon}</div>
+                    <div className="details">
+                      <p>{item.name}</p>
+                      <span>₹{item.price}</span>
+                    </div>
+                    <div className="controls">
+                      <button
+                        onClick={() => removeFromCart(item)}
+                        disabled={count === 0}
+                      >
+                        -
+                      </button>
+                      <span>{count}</span>
+                      <button onClick={() => addToCart(item)}>+</button>
+                    </div>
+                  </div>
+                );
+              })}
+              <div className="total">
+                Total: ₹{total}
+                <button
+                  className="pay-btn1"
+                  onClick={() => navigate("/cart")}
+                  style={{ marginLeft: "10%" }}
+                >
+                  View Cart
+                </button>
               </div>
             </div>
-          );
-        })}
-        <div className="total">
-          Total: ₹{total}
-          <button
-            className="pay-btn1"
-            onClick={() => navigate("/cart")}
-            style={{ marginLeft: "10%" }}
-          >
-            View Cart
-          </button>
-        </div>
-      </div>
+          </div>
+        </>
+      )}
     </div>
-  </div>
   );
 };
 

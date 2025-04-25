@@ -1,5 +1,3 @@
-
-
 import React, { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
@@ -25,7 +23,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCartItems([]); // Clear all items
+    setCartItems([]);
   };
 
   useEffect(() => {

@@ -3,7 +3,7 @@
   color: white;
   width: 90%;
   padding: 3% 5%;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 
   &__content {
     display: flex;
@@ -105,71 +105,65 @@
     width: 20%;
     height: 20%;
   }
-
-  // ** Responsiveness for different screen sizes **
-
-  // For tablets and below (max-width: 768px)
   @media (max-width: 768px) {
-    padding: 2% 4%; 
+    padding: 2% 4%;
 
     .footer__brand {
       width: 40%;
     }
 
     .footer__links {
-      width: 50%; 
-      justify-content: flex-start; 
+      width: 50%;
+      justify-content: flex-start;
     }
 
     .footer__address {
-      width: 100%; 
-      margin-top: 20px; 
+      width: 100%;
+      margin-top: 20px;
     }
 
     .footer__social {
-      margin-top: 20px; 
+      margin-top: 20px;
     }
 
     .footer__social-icons svg {
       width: 25%;
-      height: 25%; 
+      height: 25%;
     }
   }
-
-  // For mobile screens (max-width: 480px)
   @media (max-width: 480px) {
     .footer__content {
       flex-direction: column;
-      align-items: center; 
-      text-align: center; 
+      align-items: center;
+      text-align: center;
     }
 
     .footer__brand {
-      width: 100%; 
-      margin-bottom: 20px; 
+      width: 100%;
+      margin-bottom: 20px;
     }
 
     .footer__links {
-      width: 100%; 
-      justify-content: center; 
+      width: 100%;
+      justify-content: center;
     }
 
     .footer__address {
-      width: 100%; 
+      width: 100%;
       margin-top: 20px;
     }
 
     .footer__social-icons {
-      gap: 10px; 
+      gap: 10px;
     }
 
     .footer__social-icons svg {
       width: 30%;
-      height: 30%; 
+      height: 30%;
     }
 
     .footer__logo {
-      font-size: 150%; 
+      font-size: 150%;
     }
 
     .footer__desc {

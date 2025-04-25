@@ -1,325 +1,376 @@
 .fancy-payment-bg {
-    background: #ffcc00;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-x: hidden; 
-    overflow-y: fixed; 
-    font-family: "Montserrat", sans-serif;
+  background: #ffcc00;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: fixed;
+  font-family: "Montserrat", sans-serif;
+}
 
+.fancy-container {
+  background: #ffcc00;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: rgb(8, 8, 8);
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.fancy-container h2 {
+  margin-bottom: 30px;
+  font-weight: 500;
+  animation: slideDown 0.6s ease-out;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  color: rgb(12, 12, 12);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.tab-buttons button.active {
+  background: blue;
+  transform: scale(1.05);
+}
+
+.tab-buttons button:hover {
+  background: rgba(2, 2, 2, 0.25);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: fadeInUp 0.5s ease-in-out;
+  background: #ffcc00;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: white;
+  color: black;
+  transition: 0.3s;
+  outline: none;
+}
+
+.form-section input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.form-section input:focus {
+  background: #f5f5f5;
+  border: 1px solid #4b6cb7;
+}
+
+.card-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  gap: 8%;
+  color: black;
+}
+
+.card-options button {
+  padding: 12px 55px;
+  border-radius: 12px;
+  background-color: blue;
+  color: black;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card-options button.active {
+  background-color: blue;
+}
+
+.card-options button:hover {
+  background-color: blue;
+}
+
+.coupon-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  margin-left: 5%;
+}
+
+.coupon-section input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: white;
+  color: black;
+  outline: none;
+}
+
+.coupon-section input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.coupon-section input:focus {
+  background: #f5f5f5;
+  border: 1px solid #4b6cb7;
+}
+
+.coupon-section button {
+  padding: 14px 0;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: 6%;
+  margin-top: 5%;
+}
+
+.coupon-section button:hover {
+  background-color: #182848;
+}
+
+.total-amount {
+  margin-top: 25px;
+  color: black;
+}
+
+.total-amount h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.total-amount p {
+  font-size: 18px;
+  color: #f44336;
+}
+
+.pay {
+  padding: 12px 55px;
+  border-radius: 12px;
+  background-color: blue;
+  color: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.pay.active {
+  background-color: blue;
+  border: 1px solid;
+}
+
+.go-to-Pickup {
+  padding: 14px 0;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: 15%;
+  margin-top: 5%;
+  width: 55%;
+  margin-right: 15%;
+}
+
+.go-to-Pickup:hover {
+  background-color: blue;
+}
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  font-size: 24px;
+  animation: confetti-fall 4s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
   }
-  
-  .fancy-container {
-    background: #ffcc00;
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 40px;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: rgb(8, 8, 8);
-    text-align: center;
-    animation: fadeIn 1s ease forwards;
+  30% {
+    transform: translateY(20vh) rotate(45deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(40vh) rotate(90deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(60vh) rotate(135deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
-  
-  .fancy-container h2 {
-    margin-bottom: 30px;
-    font-weight: 500;
-    animation: slideDown 0.6s ease-out;
+}
+
+.confetti:nth-child(odd) {
+  color: #ff5722;
+}
+
+.confetti:nth-child(even) {
+  color: #4caf50;
+}
+
+.confetti:nth-child(3n) {
+  color: #2196f3;
+}
+
+.confetti:nth-child(4n) {
+  color: #9c27b0;
+}
+
+@media (max-width: 768px) {
+  .fancy-container {
+    width: 90%;
+    padding: 25px;
   }
-  
+
   .tab-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-  }
-  
-  .tab-buttons button {
-    flex: 1;
-    padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.15);
-    color: rgb(12, 12, 12);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-weight: bold;
-  }
-  
-  .tab-buttons button.active {
-    background: blue;
-    transform: scale(1.05);
-  }
-  
-  .tab-buttons button:hover {
-    background: rgba(2, 2, 2, 0.25);
-  }
-  
-  .form-section {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    animation: fadeInUp 0.5s ease-in-out;
-    background: #ffcc00;
-  }
-  
-  .form-section input {
-    width: 100%;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background: white;
-    color: black;
-    transition: 0.3s;
-    outline: none;
-  }
-  
-  .form-section input::placeholder {
-    color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .form-section input:focus {
-    background: #f5f5f5;
-    border: 1px solid #4b6cb7;
-  }
-  
-  .card-options {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 25px;
-    gap: 8%;
-    color: black;
-  }
-  
-  .card-options button {
-    padding: 12px 55px;
-    border-radius: 12px;
-    background-color: blue;
-    color: black;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .card-options button.active {
-    background-color: blue;
-  }
-  
-  .card-options button:hover {
-    background-color: blue;
-  }
-  
-  .coupon-section {
-    display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 80%;
-    margin-bottom: 10px;
-    margin-left: 5%;
   }
-  
-  .coupon-section input {
+
+  .tab-buttons button {
+    flex: unset;
     width: 100%;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background: white;
-    color: black;
-    outline: none;
+    padding: 12px;
   }
-  
-  .coupon-section input::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+
+  .form-section {
+    gap: 20px;
   }
-  
-  .coupon-section input:focus {
-    background: #f5f5f5;
-    border: 1px solid #4b6cb7;
+
+  .form-section input {
+    padding: 12px;
+    font-size: 14px;
   }
-  
+
+  .card-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-options button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .coupon-section input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
   .coupon-section button {
-    padding: 14px 0;
-    background: blue;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-left: 15%;
-    margin-top: 5%;
+    width: 100%;
+    padding: 14px;
   }
-  
-  .coupon-section button:hover {
-    background-color: #182848;
-  }
-  
-  .total-amount {
-    margin-top: 25px;
-    color: black;
-  }
-  
+
   .total-amount h3 {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 20px;
   }
-  
+
   .total-amount p {
-    font-size: 18px;
-    color: #f44336;
+    font-size: 16px;
   }
-  
+
   .pay {
-    padding: 12px 55px;
-    border-radius: 12px;
-    background-color: blue;
-    color: #000;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    padding: 12px 45px;
   }
-  
-  .pay.active {
-    background-color: blue;
-    border: 1px solid;
-  }
-  
+
   .go-to-orders {
-    padding: 14px 0;
-    background: blue;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-left: 15%;
-    margin-top: 5%;
-    width: 55%;
-    margin-right: 15%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
-  
-  .go-to-orders:hover {
-    background-color: blue;
+}
+
+@media (max-width: 480px) {
+  .fancy-container {
+    padding: 20px;
   }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .fancy-container {
-      width: 90%;
-      padding: 25px;
-    }
-  
-    .tab-buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .tab-buttons button {
-      flex: unset;
-      width: 100%;
-      padding: 12px;
-    }
-  
-    .form-section {
-      gap: 20px;
-    }
-  
-    .form-section input {
-      padding: 12px;
-      font-size: 14px;
-    }
-  
-    .card-options {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .card-options button {
-      width: 100%;
-      padding: 14px;
-    }
-  
-    .coupon-section input {
-      padding: 12px;
-      font-size: 14px;
-    }
-  
-    .coupon-section button {
-      width: 100%;
-      padding: 14px;
-    }
-  
-    .total-amount h3 {
-      font-size: 20px;
-    }
-  
-    .total-amount p {
-      font-size: 16px;
-    }
-  
-    .pay {
-      padding: 12px 45px;
-    }
-  
-    .go-to-orders {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-    }
+
+  .tab-buttons button {
+    padding: 10px;
+    font-size: 14px;
   }
-  
-  /* Mobile Responsiveness for Small Screens */
-  @media (max-width: 480px) {
-    .fancy-container {
-      padding: 20px;
-    }
-  
-    .tab-buttons button {
-      padding: 10px;
-      font-size: 14px;
-    }
-  
-    .form-section input {
-      padding: 10px;
-      font-size: 14px;
-    }
-  
-    .card-options button {
-      padding: 12px 40px;
-    }
-  
-    .coupon-section input {
-      padding: 10px;
-      font-size: 14px;
-    }
-  
-    .coupon-section button {
-      padding: 12px;
-    }
-  
-    .total-amount h3 {
-      font-size: 18px;
-    }
-  
-    .total-amount p {
-      font-size: 14px;
-    }
-  
-    .pay {
-      padding: 10px 40px;
-    }
-  
-    .go-to-orders {
-      padding: 12px;
-    }
+
+  .form-section input {
+    padding: 10px;
+    font-size: 14px;
   }
-  
+
+  .card-options button {
+    padding: 12px 40px;
+  }
+
+  .coupon-section input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .coupon-section button {
+    padding: 12px;
+  }
+
+  .total-amount h3 {
+    font-size: 18px;
+  }
+
+  .total-amount p {
+    font-size: 14px;
+  }
+
+  .pay {
+    padding: 10px 40px;
+  }
+
+  .go-to-orders {
+    padding: 12px;
+  }
+}

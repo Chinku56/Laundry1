@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Splashscreen.scss';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Splashscreen.scss";
 
 const Splashscreen = () => {
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -12,26 +12,24 @@ const Splashscreen = () => {
   ];
   const navigate = useNavigate();
 
-  // Simulate a dynamic sparkle count (this can be from props, data, etc.)
   useEffect(() => {
     const interval = setInterval(() => {
       setQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 4000); // Change quote every 4 seconds
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    // Simulate a dynamic increase in items, this could be based on any number.
     const interval = setInterval(() => {
-      setSparkleCount(prev => prev + 1); // Increase sparkle count by 1
-    }, 1000); // Every 1 second increases the sparkle count.
+      setSparkleCount((prev) => prev + 1);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
   const handleGetStartedClick = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -45,12 +43,8 @@ const Splashscreen = () => {
       <div className="quote-container">
         <p className="quote">{quotes[quoteIndex]}</p>
       </div>
-
-      {/* 🥳 Icon with Sparkles */}
       <div className="celebration-container">
-        <div className="emoji">
-          🥳
-        </div>
+        <div className="emoji">🥳</div>
         <div className="sparkles">
           {Array.from({ length: sparkleCount }).map((_, i) => (
             <div className="sparkle" key={i}></div>
@@ -58,7 +52,9 @@ const Splashscreen = () => {
         </div>
       </div>
 
-      <button className='tagname' onClick={handleGetStartedClick}>Get Started</button>
+      <button className="tagname" onClick={handleGetStartedClick}>
+        Get Started
+      </button>
     </div>
   );
 };

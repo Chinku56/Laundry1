@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Slider.scss";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import Navbar from "./NavBar"; // ✅ Make sure this path is correct!
+import Navbar from "./NavBar";
 
 const slides = [
   {
@@ -33,10 +33,13 @@ const Slider = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="slider">
         {slides.map((slide, index) => (
-          <div className={index === current ? "slide active" : "slide"} key={slide.id}>
+          <div
+            className={index === current ? "slide active" : "slide"}
+            key={slide.id}
+          >
             {index === current && (
               <>
                 <div className="slide__content">

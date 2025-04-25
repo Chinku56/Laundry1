@@ -1,132 +1,247 @@
 .washiron-container {
-    width: 100%;
-    padding: 2% 5%;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    margin-left: -5%;
-    background-color: #fbd000;
-  
-    .title {
-      font-size: 300%;
-      color: white;
-    }
-  
-    .subtitle {
-      font-size: 150%;
-      color: #444;
-      width: 60%;
-      margin: 1% auto;
-      margin-top: -1%;
-    }
-  
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-top: 2%;
-      border-bottom: 0.2% solid #c13ba9;
-  
-      .tab {
-        padding: 1%;
-        font-size: 200%;
-        border: none;
-        background: none;
-        cursor: pointer;
-        margin: 0 1%;
-        font-weight: bold;
-        color: gray;
-  
-        &.active {
-          color: #c13ba9;
-          border-bottom: 0.3% solid #c13ba9;
-        }
-      }
-    }
-  
-    .price-list {
-      max-height: 50%;
-      overflow-y: auto;
-      margin-top: 2%;
-      padding: 0 5%;
-  
-      .price-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2%;
-        border: 0.1% solid #ddd;
-        border-radius: 1%;
-        margin-bottom: 1%;
-        cursor: default;
-        transition: background 0.3s ease;
-  
-        &:hover {
-          background: #fff0f9;
-        }
-  
-        .icon {
-          font-size: 200%;
-        }
-  
-        .details {
-          display: flex;
-          justify-content: space-between;
-          width: 60%;
-          font-size: 150%;
-  
-          p {
-            margin: 0;
-            text-align: left;
-          }
-  
-          span {
-            font-weight: bold;
-          }
-        }
-  
-        .controls {
-          display: flex;
-          align-items: center;
-          gap: 5%;
-          width: 25%;
-  
-          button {
-            font-size: 100%;
-            padding: 2%;
-            background-color: #c13ba9;
-            color: white;
-            border: none;
-            border-radius: 10%;
-            cursor: pointer;
-  
-            &:disabled {
-              background-color: #ccc;
-              cursor: not-allowed;
-            }
-          }
-  
-          span {
-            font-size: 120%;
-            width: 10%;
-          }
-        }
-      }
-  
-      .total {
-        font-size: 150%;
-        font-weight: bold;
-        margin-top: 2%;
-        margin-left: 45%;
-      }
-  
-      .pay-btn1 {
-        padding: 1% 3%;
-        font-size: 60%;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        border-radius: 5%;
-        cursor: pointer;
-      }
-    }
+  width: 100%;
+  padding: 2% 5%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin-left: -5%;
+  background-color: #fbd000;
+}
+
+.title {
+  font-size: 300%;
+  color: white;
+}
+
+.subtitle {
+  font-size: 150%;
+  color: #444;
+  width: 60%;
+  margin: 1% auto;
+  margin-top: -1%;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  border-bottom: 0.2% solid #c13ba9;
+}
+
+.tab {
+  padding: 1%;
+  font-size: 200%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 1%;
+  font-weight: bold;
+  color: gray;
+}
+
+.tab.active {
+  color: #c13ba9;
+  border-bottom: 0.3% solid #c13ba9;
+}
+
+.price-list {
+  max-height: 50%;
+  overflow-y: auto;
+  margin-top: 2%;
+  padding: 0 5%;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2%;
+  border: 0.1% solid #ddd;
+  border-radius: 1%;
+  margin-bottom: 1%;
+  cursor: default;
+  transition: background 0.3s ease;
+}
+
+.price-item:hover {
+  background: #fff0f9;
+}
+
+.icon {
+  font-size: 200%;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  font-size: 150%;
+}
+
+.details p {
+  margin: 0;
+  text-align: left;
+}
+
+.details span {
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  width: 25%;
+}
+
+.controls button {
+  font-size: 100%;
+  padding: 2%;
+  background-color: #c13ba9;
+  color: white;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.controls span {
+  font-size: 120%;
+  width: 10%;
+}
+
+.total {
+  font-size: 150%;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-left: 45%;
+}
+
+.pay-btn1 {
+  padding: 1% 3%;
+  font-size: 60%;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 250%;
   }
-  
+
+  .subtitle {
+    font-size: 130%;
+    width: 80%;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    font-size: 180%;
+    margin: 0.5% 0;
+  }
+
+  .price-list {
+    padding: 0 3%;
+  }
+
+  .price-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3%;
+    margin-bottom: 2%;
+  }
+
+  .details {
+    width: 100%;
+    font-size: 120%;
+  }
+
+  .controls {
+    width: 100%;
+    margin-top: 2%;
+    justify-content: space-between;
+  }
+
+  .controls button {
+    width: 48%;
+    font-size: 90%;
+    padding: 1%;
+  }
+
+  .total {
+    font-size: 130%;
+    margin-left: 0;
+  }
+
+  .pay-btn1 {
+    font-size: 70%;
+    padding: 2% 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 200%;
+  }
+
+  .subtitle {
+    font-size: 120%;
+    width: 90%;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    font-size: 150%;
+    margin: 0.5% 0;
+  }
+
+  .price-list {
+    padding: 0 2%;
+  }
+
+  .price-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4%;
+    margin-bottom: 2%;
+  }
+
+  .details {
+    font-size: 110%;
+    width: 100%;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2%;
+  }
+
+  .controls button {
+    width: 48%;
+    font-size: 85%;
+    padding: 1.5%;
+  }
+
+  .total {
+    font-size: 120%;
+    margin-left: 0;
+  }
+
+  .pay-btn1 {
+    font-size: 80%;
+    padding: 2% 5%;
+  }
+}
