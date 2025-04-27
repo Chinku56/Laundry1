@@ -72,7 +72,6 @@ const FancyPage = () => {
       formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
     }
 
-    
     const mm = parseInt(formatted.slice(0, 2), 10);
     if (formatted.length >= 2 && (mm < 1 || mm > 12)) {
       toast.error("Invalid month. Use MM/YY format (e.g., 04/26).");
@@ -256,7 +255,7 @@ const FancyPage = () => {
         <div className="confetti-container">
           {confetti.map((style, index) => (
             <div key={index} className="confetti" style={style}>
-              🎉
+              {/* 🎉 icon removed */}
             </div>
           ))}
         </div>
@@ -268,3 +267,4 @@ const FancyPage = () => {
 };
 
 export default FancyPage;
+
