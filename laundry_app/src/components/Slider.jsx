@@ -12,7 +12,7 @@ const slides = [
   },
   {
     id: 2,
-    title: "WASH DAY WIN",
+    title: "WASH DAY WIN", 
     subtitle: "MAKE IT EASY",
     image: "/assets/images/slider 2.jpg",
   },
