@@ -1,11 +1,9 @@
-// @import './components/PromotionalBanners/PromotionalBanners.scss';
-
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  background-color: #fbd000;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -19,7 +17,7 @@ input:-webkit-autofill:active {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 input::-ms-reveal,
