@@ -1,7 +1,7 @@
 .chinna {
   background-color: #fbd000;
   font-family: "Montserrat", sans-serif;
-  margin-left: 5%;
+  margin-left: 2%;
   display: flex;
   justify-content: center;
 }
@@ -11,12 +11,15 @@
   padding: 10px;
   background: #fbd000;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  margin-top: 2%;
+  
 }
 
   h2 {
     text-align: center;
-    color: #444;
+    color: black;
     margin-bottom: 20px;
   }
 
