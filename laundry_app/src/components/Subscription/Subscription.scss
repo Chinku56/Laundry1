@@ -3,8 +3,14 @@
   text-align: center;
   background-color: #fbd000;
   height: 250vh;
+  margin-top: 0.7%;
   position: fixed;
-  margin-left: 11%;
+  margin-left: 10%;
+ 
+ @media (max-width: 768px) {
+  position: relative;
+  margin-left: 5%;
+ }
 
   h2 {
     color: rgb(6, 6, 6);
@@ -96,7 +102,7 @@
 
   @media (max-width: 768px) {
     .plan-card {
-      width: 90%;
+      width: 100%;
     }
   }
 
