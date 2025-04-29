@@ -40,6 +40,14 @@
       margin-right: 80%;
     }
   }
+ 
+
+.has-dropdown span.active {
+  color: #1ba2fc;
+  text-decoration: underline; 
+  text-decoration-color: #1ba2fc; 
+}
+
 
   .navbar__menu {
     width: 60%;
@@ -164,6 +172,14 @@
   .desktop-only {
     display: flex;
   }
+
+  
+.icon-active svg {
+  color: #0071bc !important;
+  transform: scale(1.15);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
 
   @media screen and (max-width: 480px) {
     .navbar {

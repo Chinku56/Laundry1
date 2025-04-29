@@ -1,14 +1,15 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Fancypayment.scss";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import Loader from "./Loader";
+import { CartContext } from "../components/CartContext";
 
 const FancyPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { clearCart } = useContext(CartContext);
 
   const passedTotal =
     location.state && typeof location.state.total === "number"
@@ -145,6 +146,13 @@ const FancyPage = () => {
     navigate("/Pickup");
   };
 
+  const handleCancelPayment = () => {
+    setTotal(0);
+    clearCart();
+    toast.info("Payment cancelled and cart cleared.");
+    navigate("/home");
+  };
+
   if (loading) {
     return <Loader text="Preparing secure payment portal..." />;
   }
@@ -170,7 +178,7 @@ const FancyPage = () => {
         </div>
 
         {method === "card" && (
-          <div className="form-section">
+          <div className="payment-form-section">
             <div className="card-options">
               <button
                 className={cardType === "credit" ? "active" : ""}
@@ -210,7 +218,7 @@ const FancyPage = () => {
         )}
 
         {method === "upi" && (
-          <div className="form-section">
+          <div className="payment-form-section">
             <input
               type="text"
               placeholder="Enter UPI ID (e.g., abc@xyz)"
@@ -244,20 +252,24 @@ const FancyPage = () => {
         </button>
 
         {paymentSuccessful && (
-          <>
-            <button className="go-to-Pickup" onClick={handleGoToPickup}>
-              Proceed To Schedule
-            </button>
-          </>
+          <button className="go-to-Pickup" onClick={handleGoToPickup}>
+            Proceed To Schedule
+          </button>
         )}
+
+        <button
+          className="cancel"
+          onClick={handleCancelPayment}
+          disabled={paymentInProgress}
+        >
+          Cancel Payment
+        </button>
       </div>
 
       {confetti.length > 0 && (
         <div className="confetti-container">
           {confetti.map((style, index) => (
-            <div key={index} className="confetti" style={style}>
-              {/* 🎉 icon removed */}
-            </div>
+            <div key={index} className="confetti" style={style}></div>
           ))}
         </div>
       )}
@@ -268,4 +280,3 @@ const FancyPage = () => {
 };
 
 export default FancyPage;
-

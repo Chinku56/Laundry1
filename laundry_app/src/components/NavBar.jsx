@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { GiShoppingCart } from "react-icons/gi";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -12,6 +12,15 @@ const Navbar = ({ loading }) => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const menuRef = useRef(null);
   const { total } = useContext(CartContext);
+  const location = useLocation();
+
+  const isServicesPage = [
+    "/washfoldprices",
+    "/washiron",
+    "/steamiron",
+    "/dryclean",
+    "/Promotional",
+  ].includes(location.pathname);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -58,7 +67,9 @@ const Navbar = ({ loading }) => {
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
-                  <span>SERVICES ▾</span>
+                  <span className={isServicesPage ? "active" : ""}>
+                    SERVICES ▾
+                  </span>
                   {servicesOpen && (
                     <ul className="dropdown">
                       <li>
@@ -132,8 +143,11 @@ const Navbar = ({ loading }) => {
                 </li>
 
                 <li style={{ position: "relative" }}>
-                  <Link
+                  <NavLink
                     to="/cart"
+                    className={({ isActive }) =>
+                      isActive ? "icon-active" : ""
+                    }
                     style={{ position: "relative", display: "inline-block" }}
                   >
                     <GiShoppingCart
@@ -155,23 +169,33 @@ const Navbar = ({ loading }) => {
                         ₹{total}
                       </span>
                     )}
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li style={{ position: "relative" }}>
-                  <Link to="/Offers">
+                  <NavLink
+                    to="/notifications"
+                    className={({ isActive }) =>
+                      isActive ? "icon-active" : ""
+                    }
+                  >
                     <NotificationsNoneIcon
                       style={{ fontSize: "24px", color: "#000" }}
                     />
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li style={{ position: "relative" }}>
-                  <Link to="/Accountpage">
+                  <NavLink
+                    to="/Accountpage"
+                    className={({ isActive }) =>
+                      isActive ? "icon-active" : ""
+                    }
+                  >
                     <AccountCircleIcon
                       style={{ fontSize: "24px", color: "#000" }}
                     />
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="mobile-only">

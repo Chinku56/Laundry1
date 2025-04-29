@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Offers.scss";
-import Navbar from "../NavBar";
+
 import Loader from "../Loader";
 
 const offers = [
@@ -12,7 +12,7 @@ const offers = [
     validTill: "Offer valid till 30 April 2025.",
     terms: "Valid only on Dry Cleaning items in the order.",
     image: "/assets/images/dry.jpg",
-    bgColor: "#FFCB05",
+    bgColor: "#d3d3d3",
   },
   {
     title: "WEEKEND SPECIAL OFFER",
@@ -66,7 +66,7 @@ const Offers = () => {
 
   return (
     <div>
-      <Navbar />
+      
       {loading ? (
         <Loader text="Clothes may not make the man, but good laundry hygiene does..." />
       ) : (

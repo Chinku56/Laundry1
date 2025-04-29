@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../pages/Login.scss';
 
-const LoginPage = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [view, setView] = useState('login'); 
@@ -235,7 +235,7 @@ const LoginPage = () => {
             </div>
           </div>
 
-          <div className="form-section">
+          <div className="auth-section">
             <div className="form-wrapper">
               {view === 'login' && renderLoginSignup()}
               {view === 'forgot' && renderForgotPassword()}
@@ -249,4 +249,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

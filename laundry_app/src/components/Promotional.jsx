@@ -3,6 +3,8 @@ import "./Promotional.scss";
 import Loader from "./Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Offers from "./Offers/Offers";
+import Navbar from "./NavBar";
 
 const Promotional = () => {
   const [loading, setLoading] = useState(true);
@@ -20,6 +22,10 @@ const Promotional = () => {
       {loading ? (
         <Loader text="I wish my bank account refilled as fast as my laundry basket..." />
       ) : (
+        <>
+        <Navbar/>
+        <Offers/>
+          
         <div className="promo-section">
           <div className="banner banner-one">
             <div className="content">
@@ -32,20 +38,10 @@ const Promotional = () => {
               </a>
             </div>
           </div>
-
-          <div className="banner banner-two">
-            <div className="content">
-              <h1>WASH-O-MATIC</h1>
-              <h2>SUPER WASH LAUNDRY</h2>
-              <p>
-                Get 50% off your first order! Fast, affordable, and spotless
-                results.
-              </p>
-              <div className="offer">50% OFF FOR FIRST ORDER</div>
-            </div>
-          </div>
         </div>
+        </>
       )}
+    
     </div>
   );
 };

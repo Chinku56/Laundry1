@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { useNavigate } from "react-router-dom";
+import NavBar from "./NavBar"
 import "./Cart.scss";
 
 const Cart = () => {
@@ -30,6 +31,10 @@ const Cart = () => {
   };
 
   return (
+    <>
+    < div className='jaffa' style={{padding:'0', margin:'-1%'}}>
+    <NavBar/>
+    </div>
     <div className="cart-container">
       <h2>Your Cart</h2>
       {itemsArray.length === 0 ? (
@@ -71,6 +76,7 @@ const Cart = () => {
         </>
       )}
     </div>
+    </>
   );
 };
 
