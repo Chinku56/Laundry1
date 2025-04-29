@@ -5,7 +5,8 @@ import { GiShoppingCart } from "react-icons/gi";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { CartContext } from "../components/CartContext";
 import Loader from "../components/Loader";
-import "./Navbar.scss";
+import "./Navbar.scss";  
+
 
 const Navbar = ({ loading }) => {
   const [menuOpen, setMenuOpen] = useState(false);
