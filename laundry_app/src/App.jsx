@@ -18,7 +18,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Offers from "./components/Offers/Offers";
-import LoginPage from "./pages/Login";
 import Subscriptions from "./components/Subscription/Subscription";
 import Servicehours from "./components/Servicehours";
 import Accountpage from "./pages/Account";
@@ -30,6 +29,8 @@ import Pastorder from "./components/Pastorder";
 import FancyPage from "./components/Fancypayment";
 import Pickuppage from "./components/Pickup";
 import PaymentPage from "./components/Paymentpage/Paymentpage";
+import NotificationsPage from "./components/Notification";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<Landingpage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/*" element={<Navigate to="/Pickuppage" replace />} />
             <Route path="/" element={<Cart />} />
             <Route path="/payment" element={<FancyPage />} />
@@ -71,7 +72,7 @@ function App() {
             <Route path="/Servicehours" element={<Servicehours />} />
             <Route path="/Accountpage" element={<Accountpage />} />
             <Route path="/Promotional" element={<Promotional />} />
-
+            <Route path="/notifications" element={<NotificationsPage />} />
             <Route path="/pickuppage" element={<Pickuppage />} />
             <Route path="/Order-tracking" element={<OrderTracking />} />
             <Route path="/slider" element={<Slider />} />

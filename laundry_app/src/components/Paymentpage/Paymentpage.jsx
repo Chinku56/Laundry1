@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./Paymentpage.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -126,7 +126,10 @@ const PaymentPage = () => {
       return;
     }
 
-    if ((paymentMethod === "credit" || paymentMethod === "debit") && !/^\d{16}$/.test(cardNumber)) {
+    if (
+      (paymentMethod === "credit" || paymentMethod === "debit") &&
+      !/^\d{16}$/.test(cardNumber)
+    ) {
       toast.error("Card number must be exactly 16 digits.", {
         position: "top-center",
         autoClose: 3000,
@@ -134,7 +137,10 @@ const PaymentPage = () => {
       return;
     }
 
-    if ((paymentMethod === "credit" || paymentMethod === "debit") && !validateExpiry(expiry)) {
+    if (
+      (paymentMethod === "credit" || paymentMethod === "debit") &&
+      !validateExpiry(expiry)
+    ) {
       toast.error("Expiry must be in MM/YY format.", {
         position: "top-center",
         autoClose: 3000,
@@ -142,7 +148,10 @@ const PaymentPage = () => {
       return;
     }
 
-    if ((paymentMethod === "credit" || paymentMethod === "debit") && !validateCardHolderName(cardHolderName)) {
+    if (
+      (paymentMethod === "credit" || paymentMethod === "debit") &&
+      !validateCardHolderName(cardHolderName)
+    ) {
       toast.error("Cardholder name must contain only letters and spaces.", {
         position: "top-center",
         autoClose: 3000,
@@ -228,7 +237,7 @@ const PaymentPage = () => {
                 maxLength={16}
                 value={cardNumber}
                 onChange={(e) =>
-                  setCardNumber(e.target.value.replace(/\D/, "")) 
+                  setCardNumber(e.target.value.replace(/\D/, ""))
                 }
                 required
               />
@@ -246,9 +255,7 @@ const PaymentPage = () => {
                   placeholder="CVV"
                   maxLength={paymentMethod === "credit" ? 4 : 3}
                   value={cvv}
-                  onChange={(e) =>
-                    setCvv(e.target.value.replace(/\D/, "")) 
-                  }
+                  onChange={(e) => setCvv(e.target.value.replace(/\D/, ""))}
                   required
                 />
               </div>

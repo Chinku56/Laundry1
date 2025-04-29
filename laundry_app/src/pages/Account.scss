@@ -1,22 +1,24 @@
 .account-container {
-  width: 100%;
   padding: 20px;
   background: #ffcc00;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 .section-container {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .section {
-  background-color: #ffcc00;
+  background-color: #d3d3d3;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
   letter-spacing: 0.5px;
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .profile input,
@@ -30,6 +32,7 @@
   border-radius: 6px;
   border: 1px solid #050505;
   font-family: "Montserrat", sans-serif;
+  position: relative;
 }
 
 .profile button {
@@ -48,7 +51,7 @@
 .club-membership .membership-info {
   margin-top: 10px;
   padding: 10px;
-  background-color: #ffcc00;
+  background-color: #FFFF;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   font-family: "Montserrat", sans-serif;
@@ -58,7 +61,7 @@
 .account {
   font-family: "Montserrat", sans-serif;
   color: black;
-  margin-left: 40%;
+ 
 }
 
 .club-membership p {
