@@ -141,11 +141,15 @@ const FancyPage = () => {
       setPaymentSuccessful(true);
       setPaymentInProgress(false);
       generateConfetti();
-    }, 1500);
-  };
 
-  const handleGoToOrderTracking = () => {
-    navigate("/Order-tracking");
+      setTimeout(() => {
+        toast.info("Redirecting to order details...");
+
+        setTimeout(() => {
+          navigate("/Order-tracking");
+        }, 1500);
+      }, 1000);
+    }, 1500);
   };
 
   const handleCancelPayment = () => {
@@ -263,17 +267,8 @@ const FancyPage = () => {
           onClick={handleProceedToPay}
           disabled={paymentInProgress || paymentSuccessful}
         >
-          {paymentInProgress ? "Processing..." : "Proceed To Pay"}
+          {paymentInProgress ? "Processing..." : "Pay & View Order Details"}
         </button>
-
-        {paymentSuccessful && (
-          <button
-            className="go-to-Order-tracking"
-            onClick={handleGoToOrderTracking}
-          >
-            View order details
-          </button>
-        )}
 
         {!paymentSuccessful && (
           <button
