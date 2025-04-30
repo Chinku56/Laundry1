@@ -191,7 +191,7 @@ const styles = {
     maxWidth: "1000px",
   },
   details: {
-    backgroundColor: "#fbd000",
+    backgroundColor: "#d3d3d3",
     width: "30%",
     padding: "40px",
     marginLeft: "35%",
