@@ -26,6 +26,9 @@ const Pickuppage = () => {
   const [fragrances, setFragrances] = useState([]);
 
   const today = new Date().toISOString().split("T")[0];
+  const maxPickupDate = new Date(new Date().setDate(new Date().getDate() + 6))
+    .toISOString()
+    .split("T")[0];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -99,7 +102,7 @@ const Pickuppage = () => {
       position: "top-center",
       autoClose: 2000,
       icon: "🧺",
-      onClose: () => navigate("/Order-tracking", { state: { total } }),
+      onClose: () => navigate("/fancypage", { state: { total } }),
     });
 
     if (isExpress) {
@@ -132,6 +135,7 @@ const Pickuppage = () => {
                     type="date"
                     value={pickupDate}
                     min={today}
+                    max={maxPickupDate}
                     onChange={(e) => {
                       setPickupDate(e.target.value);
                       setDropoffDate("");
@@ -225,7 +229,7 @@ const Pickuppage = () => {
               </div>
 
               <button className="schedule-btn" type="submit">
-                Proceed To Schedule
+                Proceed to Pay
               </button>
             </form>
           </div>
