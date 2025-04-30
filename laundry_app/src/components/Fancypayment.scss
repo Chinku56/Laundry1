@@ -187,6 +187,17 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
+.go-to-Order-tracking{
+  padding: 12px 40px;
+  border-radius: 12px;
+  background-color: blue;
+  color: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease
+
+}
 
 .pay:hover {
   background-color: rgb(96, 122, 207);

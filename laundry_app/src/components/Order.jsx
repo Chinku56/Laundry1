@@ -67,7 +67,7 @@ const OrderTracking = () => {
   return (
     <div
       className="order-tracking"
-      style={{ minHeight: "100vh", padding: "20px" }}
+      style={{ minHeight: "100vh", padding: "20px", }}
     >
       <button className="Back" onClick={handleBack}>
         Back To Home

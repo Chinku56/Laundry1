@@ -288,6 +288,12 @@ const PaymentPage = () => {
               </button>
             )}
           </div>
+          <p  onClick={() => navigate("/promotional")}
+            style={{
+              cursor: "pointer",
+              textDecoration: "underline",
+              color: "blue",
+            }}>Click here to view coupon codes</p>
 
           {voucherMessage && (
             <div className="voucher-message">

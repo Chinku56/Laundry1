@@ -91,11 +91,13 @@ const FancyPage = () => {
   const handleCouponApply = () => {
     const discountPercentage = couponCodes[coupon.toUpperCase()];
 
-    if (discountPercentage) {
+    if (discountPercentage && discount === 0) {
       const discountAmount = (total * discountPercentage) / 100;
       setDiscount(discountAmount);
       setTotal(total - discountAmount);
       toast.success(`Coupon applied! You saved ₹${discountAmount}`);
+    } else if (discount > 0) {
+      toast.info("Coupon already applied.");
     } else {
       toast.error("Invalid coupon code.");
     }
@@ -142,8 +144,8 @@ const FancyPage = () => {
     }, 1500);
   };
 
-  const handleGoToPickup = () => {
-    navigate("/Pickup");
+  const handleGoToOrderTracking = () => {
+    navigate("/Order-tracking");
   };
 
   const handleCancelPayment = () => {
@@ -234,8 +236,21 @@ const FancyPage = () => {
             placeholder="Enter Coupon Code"
             value={coupon}
             onChange={(e) => setCoupon(e.target.value)}
+            disabled={discount > 0}
           />
-          <button onClick={handleCouponApply}>Apply Coupon</button>
+          <button onClick={handleCouponApply} disabled={discount > 0}>
+            Apply Coupon
+          </button>
+          <p
+            onClick={() => navigate("/promotional")}
+            style={{
+              cursor: "pointer",
+              textDecoration: "underline",
+              color: "blue",
+            }}
+          >
+            Click here to View coupon codes
+          </p>
         </div>
 
         <div className="total-amount">
@@ -252,18 +267,23 @@ const FancyPage = () => {
         </button>
 
         {paymentSuccessful && (
-          <button className="go-to-Pickup" onClick={handleGoToPickup}>
-            Proceed To Schedule
+          <button
+            className="go-to-Order-tracking"
+            onClick={handleGoToOrderTracking}
+          >
+            View order details
           </button>
         )}
 
-        <button
-          className="cancel"
-          onClick={handleCancelPayment}
-          disabled={paymentInProgress}
-        >
-          Cancel Payment
-        </button>
+        {!paymentSuccessful && (
+          <button
+            className="cancel"
+            onClick={handleCancelPayment}
+            disabled={paymentInProgress}
+          >
+            Cancel Payment
+          </button>
+        )}
       </div>
 
       {confetti.length > 0 && (
